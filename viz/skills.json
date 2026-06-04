@@ -1,0 +1,728 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-04T00:48:38.060162+00:00",
+  "prelude": {
+    "slug": "prelude.welcome-to-the-stand",
+    "name": "Welcome to the stand",
+    "tagline": "The one mandatory step. Get oriented, then pick your first Skill from the tree.",
+    "build_state": "complete"
+  },
+  "branches": [
+    {
+      "slug": "automation",
+      "name": "Automation",
+      "tagline": "Turning recurring work into systems that run themselves.",
+      "build_state": "stub",
+      "skill_slugs": [
+        "automation.spreadsheet-automation",
+        "automation.document-automation",
+        "automation.workflow-automation",
+        "automation.agentic-workflows",
+        "automation.skill-engineering",
+        "automation.eval-design"
+      ]
+    },
+    {
+      "slug": "communication",
+      "name": "Communication",
+      "tagline": "Telling the stand's story to people who matter.",
+      "build_state": "not-started",
+      "skill_slugs": [
+        "communication.writing",
+        "communication.storytelling",
+        "communication.presentation",
+        "communication.stakeholder-updates",
+        "communication.documentation"
+      ]
+    },
+    {
+      "slug": "customer",
+      "name": "Customer",
+      "tagline": "Finding and serving people who want lemonade.",
+      "build_state": "not-started",
+      "skill_slugs": [
+        "customer.customer-understanding",
+        "customer.pricing",
+        "customer.marketing",
+        "customer.sales",
+        "customer.customer-success"
+      ]
+    },
+    {
+      "slug": "data",
+      "name": "Data",
+      "tagline": "Working with information \u2014 managing it, analyzing it, communicating it.",
+      "build_state": "stub",
+      "skill_slugs": [
+        "data.data-management",
+        "data.data-analysis",
+        "data.data-visualization",
+        "data.databases",
+        "data.data-engineering"
+      ]
+    },
+    {
+      "slug": "foundations",
+      "name": "Foundations",
+      "tagline": "The everyday tools a modern knowledge worker reaches for first.",
+      "build_state": "stub",
+      "skill_slugs": [
+        "foundations.git",
+        "foundations.spreadsheets",
+        "foundations.markdown-and-plain-text",
+        "foundations.command-line",
+        "foundations.ai-fluency"
+      ]
+    },
+    {
+      "slug": "operations",
+      "name": "Operations",
+      "tagline": "Running the stand day-to-day.",
+      "build_state": "stub",
+      "skill_slugs": [
+        "operations.planning",
+        "operations.process-design",
+        "operations.finance-and-accounting",
+        "operations.decision-making",
+        "operations.risk-and-compliance"
+      ]
+    },
+    {
+      "slug": "people",
+      "name": "People",
+      "tagline": "Working with everyone who helps run the stand.",
+      "build_state": "not-started",
+      "skill_slugs": [
+        "people.collaboration",
+        "people.feedback",
+        "people.coaching-and-management",
+        "people.hiring",
+        "people.org-design"
+      ]
+    },
+    {
+      "slug": "strategy",
+      "name": "Strategy",
+      "tagline": "Deciding where the stand goes next.",
+      "build_state": "not-started",
+      "skill_slugs": [
+        "strategy.strategy",
+        "strategy.vision",
+        "strategy.competitive-analysis",
+        "strategy.capital-allocation",
+        "strategy.board-and-governance"
+      ]
+    },
+    {
+      "slug": "systems",
+      "name": "Systems",
+      "tagline": "Making and maintaining the software side.",
+      "build_state": "not-started",
+      "skill_slugs": [
+        "systems.coding",
+        "systems.apis-and-integrations",
+        "systems.system-design",
+        "systems.testing-and-quality",
+        "systems.observability"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "slug": "automation.agentic-workflows",
+      "branch": "automation",
+      "name": "Agentic workflows",
+      "tagline": "Recurring tasks done by Claude without being asked each time.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 3,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "automation.document-automation",
+      "branch": "automation",
+      "name": "Document automation",
+      "tagline": "Auto-generating documents and reports from data and templates.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "automation.eval-design",
+      "branch": "automation",
+      "name": "Eval design",
+      "tagline": "Testing AI outputs so automation can be trusted at scale.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "automation.skill-engineering",
+      "branch": "automation",
+      "name": "Skill engineering",
+      "tagline": "Building reusable Claude skills.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "automation.spreadsheet-automation",
+      "branch": "automation",
+      "name": "Spreadsheet automation",
+      "tagline": "Using AI to take a recurring spreadsheet task and make it run itself.",
+      "build_state": "stub",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": true,
+      "prereqs": [
+        "foundations.spreadsheets",
+        "foundations.git"
+      ],
+      "unlocks": []
+    },
+    {
+      "slug": "automation.workflow-automation",
+      "branch": "automation",
+      "name": "Workflow automation",
+      "tagline": "Multi-step automation across tools.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 3,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "communication.documentation",
+      "branch": "communication",
+      "name": "Documentation",
+      "tagline": "Capturing knowledge for the next person.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "communication.presentation",
+      "branch": "communication",
+      "name": "Presentation",
+      "tagline": "Slides, decks, public-facing communication.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "communication.stakeholder-updates",
+      "branch": "communication",
+      "name": "Stakeholder updates",
+      "tagline": "Recurring \"here's where we are\" messages.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 3,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "communication.storytelling",
+      "branch": "communication",
+      "name": "Storytelling",
+      "tagline": "Narrative, persuasion, framing.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "communication.writing",
+      "branch": "communication",
+      "name": "Writing",
+      "tagline": "Clear, structured prose. The foundational Skill the rest of this branch depends on.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "customer.customer-success",
+      "branch": "customer",
+      "name": "Customer success",
+      "tagline": "Keeping customers coming back. Account management at scale.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 5,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "customer.customer-understanding",
+      "branch": "customer",
+      "name": "Customer understanding",
+      "tagline": "Who wants this, why, what would they pay.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "customer.marketing",
+      "branch": "customer",
+      "name": "Marketing",
+      "tagline": "Telling people the stand exists.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "customer.pricing",
+      "branch": "customer",
+      "name": "Pricing",
+      "tagline": "What to charge. What pricing signals.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "customer.sales",
+      "branch": "customer",
+      "name": "Sales",
+      "tagline": "Convincing other businesses to buy at scale. B2B specifics.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "data.data-analysis",
+      "branch": "data",
+      "name": "Data analysis",
+      "tagline": "Making sense of data.",
+      "build_state": "stub",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": true,
+      "prereqs": [
+        "foundations.spreadsheets",
+        "data.data-management"
+      ],
+      "unlocks": []
+    },
+    {
+      "slug": "data.data-engineering",
+      "branch": "data",
+      "name": "Data engineering",
+      "tagline": "Pipelines, ETL, schema design at scale.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "data.data-management",
+      "branch": "data",
+      "name": "Data management",
+      "tagline": "Organizing data so it stays useful.",
+      "build_state": "stub",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": true,
+      "prereqs": [
+        "foundations.spreadsheets",
+        "foundations.git"
+      ],
+      "unlocks": [
+        "data.data-analysis"
+      ]
+    },
+    {
+      "slug": "data.data-visualization",
+      "branch": "data",
+      "name": "Data visualization",
+      "tagline": "Charts, graphs, communicating data visually.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "data.databases",
+      "branch": "data",
+      "name": "Databases",
+      "tagline": "When data outgrows spreadsheets. SQL, structured data.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "foundations.ai-fluency",
+      "branch": "foundations",
+      "name": "AI fluency",
+      "tagline": "Talking to Claude effectively.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 0,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "foundations.command-line",
+      "branch": "foundations",
+      "name": "Command line",
+      "tagline": "Basic terminal use.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "foundations.git",
+      "branch": "foundations",
+      "name": "Git",
+      "tagline": "Versioned text. Branching. Pull requests. The repo as a working artifact.",
+      "build_state": "stub",
+      "tier_count": 5,
+      "tier_1_stand_stage": 0,
+      "has_readme": true,
+      "prereqs": [],
+      "unlocks": [
+        "automation.spreadsheet-automation",
+        "data.data-management"
+      ]
+    },
+    {
+      "slug": "foundations.markdown-and-plain-text",
+      "branch": "foundations",
+      "name": "Markdown and plain text",
+      "tagline": "Plain text formats, modern document conventions.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 0,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "foundations.spreadsheets",
+      "branch": "foundations",
+      "name": "Spreadsheets",
+      "tagline": "The tool the audience already half-knows. Taken to fluent.",
+      "build_state": "stub",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": true,
+      "prereqs": [],
+      "unlocks": [
+        "data.data-analysis",
+        "data.data-management",
+        "automation.spreadsheet-automation"
+      ]
+    },
+    {
+      "slug": "operations.decision-making",
+      "branch": "operations",
+      "name": "Decision making",
+      "tagline": "Frameworks, trade-offs, judgment under uncertainty.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "operations.finance-and-accounting",
+      "branch": "operations",
+      "name": "Finance and accounting",
+      "tagline": "Budgets, P&L, cash flow. Knowing whether the stand is making money.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "operations.planning",
+      "branch": "operations",
+      "name": "Planning",
+      "tagline": "Decide before you act.",
+      "build_state": "stub",
+      "tier_count": 5,
+      "tier_1_stand_stage": 1,
+      "has_readme": true,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "operations.process-design",
+      "branch": "operations",
+      "name": "Process design",
+      "tagline": "Turning ad-hoc work into something that runs the same way every time.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "operations.risk-and-compliance",
+      "branch": "operations",
+      "name": "Risk and compliance",
+      "tagline": "What can go wrong; what regulators care about.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "people.coaching-and-management",
+      "branch": "people",
+      "name": "Coaching and management",
+      "tagline": "Leading direct reports.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "people.collaboration",
+      "branch": "people",
+      "name": "Collaboration",
+      "tagline": "Working well across roles. Handoffs, shared context.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "people.feedback",
+      "branch": "people",
+      "name": "Feedback",
+      "tagline": "Giving and receiving. The Skill that determines whether teams get better.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "people.hiring",
+      "branch": "people",
+      "name": "Hiring",
+      "tagline": "Finding and selecting people.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "people.org-design",
+      "branch": "people",
+      "name": "Org design",
+      "tagline": "Structuring teams as you scale.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 6,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "strategy.board-and-governance",
+      "branch": "strategy",
+      "name": "Board and governance",
+      "tagline": "Operating with oversight. Public-company territory.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 7,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "strategy.capital-allocation",
+      "branch": "strategy",
+      "name": "Capital allocation",
+      "tagline": "Where to spend, what to skip.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 6,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "strategy.competitive-analysis",
+      "branch": "strategy",
+      "name": "Competitive analysis",
+      "tagline": "Understanding the market.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 5,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "strategy.strategy",
+      "branch": "strategy",
+      "name": "Strategy",
+      "tagline": "What to do, what not to do. Trade-off at the level of the whole business.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "strategy.vision",
+      "branch": "strategy",
+      "name": "Vision",
+      "tagline": "Articulating where you're going.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 5,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "systems.apis-and-integrations",
+      "branch": "systems",
+      "name": "APIs and integrations",
+      "tagline": "Connecting tools. Pulling data from one system, pushing to another.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 3,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "systems.coding",
+      "branch": "systems",
+      "name": "Coding",
+      "tagline": "Python, scripting, small programs. Reading code well enough to modify it.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 2,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "systems.observability",
+      "branch": "systems",
+      "name": "Observability",
+      "tagline": "Knowing whether it's still working. Logs, monitoring, alerts.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 4,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "systems.system-design",
+      "branch": "systems",
+      "name": "System design",
+      "tagline": "Designing the shape of what you build. Inputs, outputs, where state lives.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 3,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    },
+    {
+      "slug": "systems.testing-and-quality",
+      "branch": "systems",
+      "name": "Testing and quality",
+      "tagline": "Making sure it works. Confidence in change.",
+      "build_state": "not-started",
+      "tier_count": 5,
+      "tier_1_stand_stage": 3,
+      "has_readme": false,
+      "prereqs": [],
+      "unlocks": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "foundations.spreadsheets",
+      "to": "automation.spreadsheet-automation"
+    },
+    {
+      "from": "foundations.git",
+      "to": "automation.spreadsheet-automation"
+    },
+    {
+      "from": "foundations.spreadsheets",
+      "to": "data.data-analysis"
+    },
+    {
+      "from": "data.data-management",
+      "to": "data.data-analysis"
+    },
+    {
+      "from": "foundations.spreadsheets",
+      "to": "data.data-management"
+    },
+    {
+      "from": "foundations.git",
+      "to": "data.data-management"
+    }
+  ]
+}
