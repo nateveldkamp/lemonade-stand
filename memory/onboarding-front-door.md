@@ -7,6 +7,19 @@ metadata:
 
 **Agreed 2026-06-04.** Major pivot in how learners get started.
 
+## STATUS / how to resume (last worked 2026-06-04)
+
+The onboarding front door is **built and pushed to `origin/main`** (latest commit ~`a3350b6`). What exists and works:
+- Front door = root `README.md` (dual-audience) + a **GitHub Pages site** at repo root: `index.html` (landing), `about.html` (the why / lemonade-stand / play-the-whole-game story), `start.txt` (canonical AI guide), `llms.txt`, `.nojekyll`. Plus `game/play-by-chat.md` (Python-free game rules).
+- Landing primary URL: `https://nateveldkamp.github.io/lemonade-stand/`. Guide: `/start.txt`. About: `/about.html`.
+
+**PENDING (do these to resume / test):**
+1. **Enable GitHub Pages** (one-time, only Nate can): repo Settings → Pages → Deploy from a branch → `main` / root → Save. Until then the github.io URLs 404.
+2. **Test pass:** open the landing on a phone, try each provider button (Claude, ChatGPT, Gemini, Grok) — see which open the app / fetch `start.txt` / start guiding vs. just summarize. Report back per provider; adjust prompt/fallbacks as needed.
+3. **Known caveat:** content is duplicated across README, `start.txt`, and the inline starter prompt — `start.txt` is canonical; consolidate later.
+
+This onboarding thread is separate from the **curriculum skill rebuild** (see `skill-map-current-state-and-resume.md` — skills are still empty, being rebuilt level by level, L0 proposal pending).
+
 ## The model: the repo link IS the onboarding
 
 No more zipped folder + getting-started PDF. The new front door: a learner pastes the **GitHub repo link into any AI chat** (Claude, ChatGPT, Gemini — any provider, any tool) and says something like *"Read this repo and be my guide. Let's begin."* The AI reads the **root README**, which doubles as **instructions the AI follows to run the onboarding**. The repo is self-orchestrating. Only **later** (after Git basics are established) does it prompt the learner to clone locally and move to Claude Code.
