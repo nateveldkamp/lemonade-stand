@@ -46,12 +46,12 @@
   <div class="card">
     <div class="step">1 · One tap to start</div>
     <div class="providers">
-      <a class="btn btn-prov" id="open-chatgpt" target="_blank" rel="noopener">Open in ChatGPT</a>
       <a class="btn btn-prov" id="open-claude" target="_blank" rel="noopener">Open in Claude</a>
-      <a class="btn btn-prov" id="open-perplexity" target="_blank" rel="noopener">Open in Perplexity</a>
+      <a class="btn btn-prov" id="open-chatgpt" target="_blank" rel="noopener">Open in ChatGPT</a>
       <a class="btn btn-prov" id="open-gemini" target="_blank" rel="noopener">Open in Gemini</a>
+      <a class="btn btn-prov" id="open-xai" target="_blank" rel="noopener">Open in Grok</a>
     </div>
-    <p class="hint">These open your AI with the prompt ready. For Gemini (and any app that doesn't pre-fill), paste the prompt below.</p>
+    <p class="hint">Claude and ChatGPT open with the prompt ready. For Gemini and Grok (which don't pre-fill), tap the app, then paste the prompt below.</p>
   </div>
 
   <div class="card">
@@ -78,11 +78,11 @@
   document.getElementById("prompt").value = PROMPT;
 
   var enc = encodeURIComponent(PROMPT);
-  document.getElementById("open-chatgpt").href = "https://chatgpt.com/?q=" + enc;
   document.getElementById("open-claude").href = "https://claude.ai/new?q=" + enc;
-  document.getElementById("open-perplexity").href = "https://www.perplexity.ai/search?q=" + enc;
-  // Gemini has no reliable prefill param; open the app and rely on the pasted prompt.
+  document.getElementById("open-chatgpt").href = "https://chatgpt.com/?q=" + enc;
+  // Gemini and Grok have no reliable prefill param; open the app and rely on the pasted prompt.
   document.getElementById("open-gemini").href = "https://gemini.google.com/app";
+  document.getElementById("open-xai").href = "https://grok.com";
 
   document.getElementById("copy").addEventListener("click", function () {
     var ta = document.getElementById("prompt");

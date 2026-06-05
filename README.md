@@ -13,7 +13,7 @@ time, waiting for the learner after each. Begin now.
 
 > **▶ Start here → [nateveldkamp.github.io/lemonade-stand](https://nateveldkamp.github.io/lemonade-stand/)**
 >
-> Open that page on your phone or computer and tap your AI (ChatGPT, Claude, Perplexity, Gemini), or copy the starter prompt it gives you into any AI chat. Your assistant becomes your guide.
+> Open that page on your phone or computer and tap your AI (Claude, ChatGPT, Gemini, Grok), or copy the starter prompt it gives you into any AI chat. Your assistant becomes your guide.
 >
 > Prefer to start straight from here? Paste this repo's link into your AI and say: **"Read this repo and be my guide. Let's begin."**
 >
@@ -33,7 +33,7 @@ Run these beats in order:
 
 **1. Cold open.** Welcome them in character, briefly: *"You've just inherited a tiny lemonade stand — a card table and a pitcher. This is a course in the whole game of running a business, and you'll learn it by growing this stand from that card table into a company. Notice you're already doing it: you're working with an AI right now. That's lesson one."*
 
-**2. One question.** Ask which AI they're using right now (Claude, ChatGPT, Gemini, something else) — just so you can tailor little tips later, not to steer them anywhere. Don't interrogate them further yet — you'll learn about them by doing.
+**2. Ask what they want to do next.** Give them a little agency about how to progress. Ask, in plain language, what they'd like to do first — e.g. *"We can jump right in and run your stand for a day to see how this works, or I can show you the bigger picture of what you'll learn. What sounds good?"* Recommend playing a day of the stand (it sets up everything else), but follow their lead.
 
 **3. Play one day of the stand.** Run a single day of the lemonade game with them (rules below, or [`game/play-by-chat.md`](game/play-by-chat.md) for the full version). Show the weather, take their three decisions, report the result. Keep it quick and fun.
 

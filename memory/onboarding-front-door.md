@@ -21,7 +21,7 @@ No more zipped folder + getting-started PDF. The new front door: a learner paste
 
 ## The agreed opening flow
 1. **Cold open** — warm, in-character: you've inherited a stand; this is the whole game of running a business; and you're already doing it *with an AI* — that's lesson one.
-2. **One light question** — which AI am I talking to? (for tailoring tips only; no provider steering). Early on, explain simply how the course works: copy-paste prompts now → work out of a repo later (pasting stops).
+2. **Ask what they want to do next** — give them agency about how to progress (e.g. "run your stand for a day, or see the bigger picture of what you'll learn?"); recommend playing the game but follow their lead. (Do NOT ask which AI they're using.) Early on, explain simply how the course works: copy-paste prompts now → work out of a repo later (pasting stops).
 3. **Play one day** of the stand (chat, zero setup).
 4. **The reveal** — map each decision to a slice → introduce the wheel (16 slices, 4 quadrants, the stand at center):
    - price → Marketing/Pricing · signs → Marketing · glasses-to-make → Operations/Inventory + Finance/Unit economics · weather & storms → Decision-making + Risk · did you profit → Finance/**Accounting**.
@@ -44,7 +44,7 @@ The hard problem isn't kickoff, it's *ongoing* content access: most AI tools can
 - **Honest caveat:** a tool with web access fully off still can't reach any URL; the tiny prompt then tells the AI to ask the learner to paste the page (one tap from the site). Degrade gracefully.
 
 **Site files added at repo root (GitHub Pages source = root, `.nojekyll`):**
-- `index.html` — mobile-friendly landing: "Copy starter prompt" + one-tap "Open in ChatGPT/Claude/Perplexity/Gemini" deep links (deep-link prompt is short and points to start.txt).
+- `index.html` — mobile-friendly landing: "Copy starter prompt" + one-tap "Open in" buttons in order **Claude, ChatGPT, Gemini, Grok (xAI)** (Claude/ChatGPT prefill via `?q=`; Gemini/Grok just open the app and the learner pastes). Deep-link prompt is short and points to start.txt.
 - `start.txt` — canonical full AI-guide instructions (beats + game rules + skill map) the prompt points the AI to fetch and follow.
 - `llms.txt` — AI-discovery pointer.
 - `.nojekyll` — serve files as-is.
