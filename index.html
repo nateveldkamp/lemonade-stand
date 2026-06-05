@@ -63,7 +63,7 @@
     <div class="step">2 · Or copy &amp; paste this</div>
     <textarea id="prompt" readonly></textarea>
     <button class="btn btn-primary" id="copy">Copy starter prompt <span id="copied">copied ✓</span></button>
-    <p class="hint">Works in any AI chat. If your assistant can't open links, it'll ask you to paste the page — tap <a href="start.txt">the guide</a> and copy it in.</p>
+    <p class="hint">Works in any AI chat. If your assistant can't open links, it'll ask you to paste the page — tap <a href="start.txt" target="_blank" rel="noopener">the guide</a> and copy it in.</p>
   </div>
 
   <p class="foot">
@@ -122,7 +122,7 @@
       e.preventDefault();
       copySync();                            // put the prompt on the clipboard first
       toast("Prompt copied — paste it into the app");
-      window.location.href = urls[id];       // open the app (mobile) or site
+      window.open(urls[id], "_blank", "noopener");  // new tab — keep this page open
     });
   });
 
