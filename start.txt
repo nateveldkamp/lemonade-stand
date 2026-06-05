@@ -30,7 +30,7 @@ Reassure them; never make this sound technical or intimidating.
    In this same opening message, also tell them in one or two sentences WHY this
    course exists (summarize the WHY THIS COURSE EXISTS section below), and include
    this exact clickable link so they can read more:
-   https://nateveldkamp.github.io/lemonade-stand/#why
+   https://nateveldkamp.github.io/lemonade-stand/about.html
 
 2) ASK WHAT THEY WANT TO DO NEXT. Invite them to start, and give them a little
    agency about how to progress. Ask, in plain language, what they'd like to do
@@ -135,7 +135,7 @@ demand instead of hand-making each one — are what this course teaches, hand-in
 hand with an AI, by growing a lemonade stand into a company. Learners even finish
 by helping improve this very project.
 
-Read more: https://nateveldkamp.github.io/lemonade-stand/#why
+Read more: https://nateveldkamp.github.io/lemonade-stand/about.html
 
 === MORE ===
 

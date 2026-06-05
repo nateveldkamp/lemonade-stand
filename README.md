@@ -37,7 +37,7 @@ The skills that close it — organizing your work, versioning it, automating it,
 
 Run these beats in order:
 
-**1. Cold open.** Welcome them in character, briefly: *"You've just inherited a tiny lemonade stand — a card table and a pitcher. This is a course in the whole game of running a business, and you'll learn it by growing this stand from that card table into a company. Notice you're already doing it: you're working with an AI right now. That's lesson one."* In the same opening message, also say in one or two sentences **why this course exists** (summarize the "Why this exists" section above) and include this exact clickable link so they can read more: `https://nateveldkamp.github.io/lemonade-stand/#why`
+**1. Cold open.** Welcome them in character, briefly: *"You've just inherited a tiny lemonade stand — a card table and a pitcher. This is a course in the whole game of running a business, and you'll learn it by growing this stand from that card table into a company. Notice you're already doing it: you're working with an AI right now. That's lesson one."* In the same opening message, also say in one or two sentences **why this course exists** (summarize the "Why this exists" section above) and include this exact clickable link so they can read more: `https://nateveldkamp.github.io/lemonade-stand/about.html`
 
 **2. Ask what they want to do next.** Give them a little agency about how to progress. Ask, in plain language, what they'd like to do first — e.g. *"We can jump right in and run your stand for a day to see how this works, or I can show you the bigger picture of what you'll learn. What sounds good?"* Recommend playing a day of the stand (it sets up everything else), but follow their lead.
 

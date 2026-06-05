@@ -46,8 +46,11 @@ The hard problem isn't kickoff, it's *ongoing* content access: most AI tools can
 **Site files added at repo root (GitHub Pages source = root, `.nojekyll`):**
 - `index.html` — mobile-friendly landing: "Copy starter prompt" + one-tap "Open in" buttons in order **Claude, ChatGPT, Gemini, Grok (xAI)** (Claude/ChatGPT prefill via `?q=`; Gemini/Grok just open the app and the learner pastes). Deep-link prompt is short and points to start.txt.
 - `start.txt` — canonical full AI-guide instructions (beats + game rules + skill map) the prompt points the AI to fetch and follow.
+- `about.html` — the "fuller story" page: business + AI taught as one skill; **why a lemonade stand** (simplest complete business, scales card-table → global); **"play the whole game"** (David Perkins, *Making Learning Whole* — junior version of the whole game from day one); and the why-this-matters (repo/factory) argument. The landing page summarizes the why briefly and links here; the AI's opening links here too (`/about.html`, replacing the old `#why`).
 - `llms.txt` — AI-discovery pointer.
 - `.nojekyll` — serve files as-is.
+
+Landing headline now makes explicit it's **one course in two things at once — building/running a business AND working with AI, learned together.**
 
 **To enable:** repo Settings → Pages → Deploy from a branch → `main` / root. URLs: site `https://nateveldkamp.github.io/lemonade-stand/`, guide `.../start.txt`.
 
