@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: strategy
+slug: people-hr
 quadrant: lead
-name: Strategy & corporate development
-tagline: Deciding where the stand goes next.
+name: People & leadership
+tagline: Working with — and through — everyone who helps run the stand.
 build_state: not-started
 skills: []
 ---
 
-# Strategy & corporate development
+# People & leadership
 
-*Deciding where the stand goes next.*
+*Working with — and through — everyone who helps run the stand.*
 
 **Quadrant:** Lead — scale & steer.
 

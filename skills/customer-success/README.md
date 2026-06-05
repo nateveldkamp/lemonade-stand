@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: operations
+slug: customer-success
 quadrant: run
-name: Operations & supply chain
-tagline: Running the stand day to day, the same way every time.
+name: Customer success
+tagline: Keeping the customers you already won.
 build_state: not-started
 skills: []
 ---
 
-# Operations & supply chain
+# Customer success
 
-*Running the stand day to day, the same way every time.*
+*Keeping the customers you already won.*
 
 **Quadrant:** Run — the business functions.
 

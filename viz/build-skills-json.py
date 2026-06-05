@@ -66,10 +66,10 @@ def main() -> int:
             "tagline": s["tagline"],
             "build_state": s["build_state"],
             "tier_count": s.get("tier_count", 5),
-            "tier_1_stand_stage": s.get("tier_1_stand_stage"),
+            "complexity_level": s.get("complexity_level"),
             "has_readme": True,
             "prereqs": s.get("prereqs") or [],
-            "unlocks": s.get("unlocks") or [],
+            "unlocks": [],
         }
 
     # Walk each branch's `skills:` list. For entries that are just slugs,
@@ -93,22 +93,25 @@ def main() -> int:
                 "tagline": entry.get("tagline", ""),
                 "build_state": entry.get("build_state", "not-started"),
                 "tier_count": entry.get("tier_count", 5),
-                "tier_1_stand_stage": entry.get("tier_1_stand_stage"),
+                "complexity_level": entry.get("complexity_level"),
                 "has_readme": False,
                 "prereqs": entry.get("prereqs") or [],
-                "unlocks": entry.get("unlocks") or [],
+                "unlocks": [],
             }
         branches_out.append(
             {
                 "slug": branch_slug,
                 "name": b["name"],
                 "tagline": b["tagline"],
+                "quadrant": b.get("quadrant"),
                 "build_state": b["build_state"],
                 "skill_slugs": skill_slugs_in_order,
             }
         )
 
-    # Validate references and edge symmetry.
+    # Validate prereq references, derive the inverse `unlocks`, and check the
+    # monotonicity rule: a prerequisite must sit at a complexity level no
+    # higher than the skill it unlocks (roads flow inward -> outward).
     errors: list[str] = []
     warnings: list[str] = []
     for skill in skills_by_slug.values():
@@ -118,24 +121,18 @@ def main() -> int:
                     f"{skill['slug']}.prereqs references unknown Skill {target!r}"
                 )
                 continue
-            if skill["slug"] not in skills_by_slug[target]["unlocks"]:
+            # Derive the reverse edge so authors only write `prereqs`.
+            skills_by_slug[target]["unlocks"].append(skill["slug"])
+            lvl = skill.get("complexity_level")
+            plvl = skills_by_slug[target].get("complexity_level")
+            if lvl is not None and plvl is not None and plvl > lvl:
                 warnings.append(
-                    f"asymmetric edge: {skill['slug']}.prereqs includes "
-                    f"{target}, but {target}.unlocks does not include "
-                    f"{skill['slug']}"
+                    f"monotonicity: {skill['slug']} (L{lvl}) lists prereq "
+                    f"{target} (L{plvl}) which sits further out"
                 )
-        for target in skill["unlocks"]:
-            if target not in skills_by_slug:
-                warnings.append(
-                    f"{skill['slug']}.unlocks references unknown Skill {target!r}"
-                )
-                continue
-            if skill["slug"] not in skills_by_slug[target]["prereqs"]:
-                warnings.append(
-                    f"asymmetric edge: {skill['slug']}.unlocks includes "
-                    f"{target}, but {target}.prereqs does not include "
-                    f"{skill['slug']}"
-                )
+
+    for skill in skills_by_slug.values():
+        skill["unlocks"] = sorted(set(skill["unlocks"]))
 
     for w in warnings:
         warn(w)

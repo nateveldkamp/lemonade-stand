@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: communication
+slug: planning-execution
 quadrant: craft
-name: Communication
-tagline: Saying what you mean — to people and to machines.
+name: Planning & execution
+tagline: Decide before you act, then get it done.
 build_state: not-started
 skills: []
 ---
 
-# Communication
+# Planning & execution
 
-*Saying what you mean — to people and to machines.*
+*Decide before you act, then get it done.*
 
 **Quadrant:** Craft — how you work.
 

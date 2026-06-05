@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: communication
+slug: knowledge-management
 quadrant: craft
-name: Communication
-tagline: Saying what you mean — to people and to machines.
+name: Knowledge & context management
+tagline: Organizing what you know so it stays findable — and feedable.
 build_state: not-started
 skills: []
 ---
 
-# Communication
+# Knowledge & context management
 
-*Saying what you mean — to people and to machines.*
+*Organizing what you know so it stays findable — and feedable.*
 
 **Quadrant:** Craft — how you work.
 

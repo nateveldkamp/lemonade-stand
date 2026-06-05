@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: strategy
+slug: legal-risk
 quadrant: lead
-name: Strategy & corporate development
-tagline: Deciding where the stand goes next.
+name: Legal, risk & governance
+tagline: Staying out of trouble, and steering with oversight.
 build_state: not-started
 skills: []
 ---
 
-# Strategy & corporate development
+# Legal, risk & governance
 
-*Deciding where the stand goes next.*
+*Staying out of trouble, and steering with oversight.*
 
 **Quadrant:** Lead — scale & steer.
 

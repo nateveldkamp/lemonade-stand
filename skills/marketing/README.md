@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: operations
+slug: marketing
 quadrant: run
-name: Operations & supply chain
-tagline: Running the stand day to day, the same way every time.
+name: Marketing
+tagline: Telling people the stand exists — and why they want it.
 build_state: not-started
 skills: []
 ---
 
-# Operations & supply chain
+# Marketing
 
-*Running the stand day to day, the same way every time.*
+*Telling people the stand exists — and why they want it.*
 
 **Quadrant:** Run — the business functions.
 

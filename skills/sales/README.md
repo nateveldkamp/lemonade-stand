@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: operations
+slug: sales
 quadrant: run
-name: Operations & supply chain
-tagline: Running the stand day to day, the same way every time.
+name: Sales & business development
+tagline: Asking for the sale, and building the deals that scale.
 build_state: not-started
 skills: []
 ---
 
-# Operations & supply chain
+# Sales & business development
 
-*Running the stand day to day, the same way every time.*
+*Asking for the sale, and building the deals that scale.*
 
 **Quadrant:** Run — the business functions.
 

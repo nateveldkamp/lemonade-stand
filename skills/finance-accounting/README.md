@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: operations
+slug: finance-accounting
 quadrant: run
-name: Operations & supply chain
-tagline: Running the stand day to day, the same way every time.
+name: Finance & accounting
+tagline: Knowing whether the stand is actually making money.
 build_state: not-started
 skills: []
 ---
 
-# Operations & supply chain
+# Finance & accounting
 
-*Running the stand day to day, the same way every time.*
+*Knowing whether the stand is actually making money.*
 
 **Quadrant:** Run — the business functions.
 

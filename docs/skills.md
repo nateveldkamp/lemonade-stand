@@ -1,43 +1,60 @@
-# The skill tree
+# The skill map
 
-After the prelude (Cycle 0 — Welcome to the stand), the curriculum has no required order. The learner moves through a *skill tree* — a comprehensive map of competencies grouped by domain — picking what to develop next. This document is the framework: vocabulary, structure, slug convention, and build-state visibility.
+After the prelude (Welcome to the stand), the curriculum has no required order. The learner moves through a *skill map* — a comprehensive radial map of competencies — picking what to develop next. The map is a "Google Maps for skills": the lemonade stand at the center, skills placed outward by business complexity, connected by roads you navigate. This document is the framework: vocabulary, structure, slug convention, and build-state visibility.
+
+## The three channels
+
+The map deliberately keeps three different ideas on three separate channels, so none of them overloads the others:
+
+- **Radius = business complexity.** Distance from the center is the *business scale* at which a skill first matters, on a Rule-of-3-and-10 log scale (≈1 → 3 → 10 → 30 → 100 → 300 people). Outward means a bigger, more complex business — *not* a harder skill. Captured per skill by `complexity_level`.
+- **Roads = "builds on."** Directed prerequisite edges between skills (`prereqs`). These power navigation: pick a destination skill, and the map routes from where you are. Constrained by a **monotonicity rule** — a prerequisite never sits at a higher complexity level than the skill it unlocks, so roads flow inward → outward.
+- **Tiers = skill mastery.** A skill's own depth (Tier 1 basics → Tier 5 mastery) is *vertical inside the node*, not a radial position.
 
 ## Vocabulary
 
 - **The whole game** — running the lemonade-stand business. One continuous story; see [narrative-arc.md](narrative-arc.md).
-- **Branch** — a domain of skill. Nine of them: Foundations, Data, Operations, Customer, Systems, Automation, Communication, People, Strategy.
-- **Skill** — a named competency inside a branch (Git, Spreadsheets, Planning, ...). Each Skill has its own progression.
+- **Quadrant** — one of four families the wheel is divided into: **Craft** (how you work), **Build** (make things), **Run** (the business functions), **Lead** (scale & steer).
+- **Slice** — a domain of skill, occupying an angular wedge inside a quadrant. Sixteen of them (see below). *(In the frontmatter and tooling these are still `kind: branch` for historical reasons.)*
+- **Skill** — a named competency inside a slice (Writing, Spreadsheets, Bookkeeping, ...). Each Skill has its own tier progression.
 - **Tier** — vertical progression within a Skill. Tier 1 = basics; Tier 5 = mastery. Tier counts vary per Skill.
+- **Complexity level** — the radius ring a skill enters on (see [Complexity levels](#complexity-levels)).
 - **Drill** — a single unit of practice. Discrete, roughly 15–60 minutes. Each drill is anchored to a moment in the lemonade-stand story and earns progress in one or more Skills.
-- **Practice (verb)** — what the learner does. *"You practice Git by completing its drills."*
-- **Prelude** — the mandatory setup step. Sits outside the tree. Today this is *Welcome to the stand*.
+- **Prelude** — the mandatory setup step. Sits at the center of the map. Today this is *Welcome to the stand*.
 
-## How the tree works
+## The 16 slices
 
-The tree allows progression along two axes at once:
+The wheel has four quadrants, each holding several slices. Each slice's `README.md` lists its Skills and their build state.
 
-- **Vertical (depth)** — completing higher tiers of a single Skill. *"I'm at Tier 3 of Spreadsheets."* Some tiers within a Skill build on lower tiers.
-- **Horizontal (breadth)** — completing Tier 1 of multiple Skills. *"I've started Foundations across the board."* No prerequisites; learners can spread out across the foundational layer.
+| Quadrant | Slices |
+|---|---|
+| **Craft** — how you work | [Communication](../skills/communication/), [Knowledge & context management](../skills/knowledge-management/), [Planning & execution](../skills/planning-execution/), [Decision-making & judgment](../skills/decision-judgment/) |
+| **Build** — make things | [Data & analytics](../skills/data-analytics/), [Software & engineering](../skills/software-engineering/), [Automation & IT systems](../skills/automation-it/), [Product & design](../skills/product-design/) |
+| **Run** — the business functions | [Finance & accounting](../skills/finance-accounting/), [Operations & supply chain](../skills/operations/), [Marketing](../skills/marketing/), [Sales & business development](../skills/sales/), [Customer success](../skills/customer-success/) |
+| **Lead** — scale & steer | [People & leadership](../skills/people-hr/), [Strategy & corporate development](../skills/strategy/), [Legal, risk & governance](../skills/legal-risk/) |
 
-The tree is a graph, not a tower. Most cross-Skill prerequisites are *suggested*, not gating — the Skill README spells out what other Skills make a given tier easier.
+## Complexity levels
 
-A well-designed skill tree rewards both moves. Specialists go deep on one branch. Generalists go wide. The course design assumes most learners will mix.
+The radius is a Rule-of-3-and-10 log scale (see [the Sequoia article](https://articles.sequoiacap.com/the-rule-of-3-and-10)): a business is forced to rethink how it operates at each ~3× step in scale. A skill's `complexity_level` is the ring where it first matters.
 
-## Branches
-
-The tree has nine branches. Each branch's `README.md` lists its Skills and their current build state.
-
-| Branch | What it covers | Tier-1 stand stage |
+| Level | Rough scale | Lemonade stand |
 |---|---|---|
-| [Foundations](../skills/foundations/) | The everyday tools a modern knowledge worker reaches for first. | 0–1 |
-| [Data](../skills/data/) | Working with information — managing, analyzing, visualizing. | 1 |
-| [Operations](../skills/operations/) | Running the stand day-to-day — planning, process, finance, decisions. | 1–2 |
-| [Customer](../skills/customer/) | Finding and serving people who want lemonade. | 1–2 |
-| [Systems](../skills/systems/) | Making and maintaining the software side. | 2–3 |
-| [Automation](../skills/automation/) | Turning recurring work into systems that run themselves. The "factory not artifact" branch. | 1–3 |
-| [Communication](../skills/communication/) | Telling the stand's story to people who matter. | 1–2 |
-| [People](../skills/people/) | Working with everyone who helps run the stand. | 2 |
-| [Strategy](../skills/strategy/) | Deciding where the stand goes next. | 4+ |
+| 0 | just you | card table |
+| 1 | ~3 people | recurring weekend stand / family helps |
+| 2 | ~10 / multiple locations | multiple locations |
+| 3 | ~30 / first hires | wholesale, first hires, product lines |
+| 4 | ~100 / regional | regional company |
+| 5 | ~300 / manufacturing | manufacturing & supply chain |
+| 6 | ~1,000 / national | national brand |
+| 7 | global | global, public |
+
+## How the map works
+
+Progression happens along two axes at once:
+
+- **Outward (breadth across complexity)** — taking on skills the business needs as it grows from a card table toward a company.
+- **Vertical (depth)** — completing higher tiers of a single Skill. *"I'm at Tier 3 of Spreadsheets."*
+
+The map is a graph, not a tower. Roads (`prereqs`) are *suggested* navigation, not hard gates — they tell you what makes a skill easier to reach, and let the map route you from where you are to where you want to go.
 
 ## Slug convention
 
@@ -87,88 +104,89 @@ The schema is intentionally small. It will grow as drills land and as the visual
 | `tagline` | string | yes | The one-line italicized phrase under the H1. Used as the hover label in the viz. |
 | `build_state` | `not-started` \| `stub` \| `tier-1` \| `tier-2` \| `tier-3` \| `tier-4` \| `tier-5` \| `multi-tier` \| `complete` | yes | Matches the markers in [Build-state markers](#build-state-markers) above. For branches, this is rolled up from the branch's Skills (use the *highest* state any Skill in the branch has reached). |
 
-### Branch-only fields
+### Slice (branch) -only fields
 
 | Field | Type | Required | Meaning |
 |---|---|---|---|
-| `skills` | list of slugs *or* inline objects | yes | The Skills this branch contains, in the order they should appear — including not-yet-started ones, so the viz can render placeholder nodes for the full planned tree. |
+| `quadrant` | `craft` \| `build` \| `run` \| `lead` | yes | Which quadrant of the wheel this slice sits in. Drives layout and color in the viz. |
+| `skills` | list of slugs *or* inline objects | yes | The Skills this slice contains — including not-yet-started ones, so the viz can render placeholder nodes for the full planned map. |
 
 `skills:` entries take one of two forms:
 
-- **Just a slug** (`- slug: foundations.git`) — used when the Skill has its own `README.md` with full frontmatter. The Skill README is authoritative.
-- **An inline object** — used for not-started Skills that don't yet have a README. Provides enough metadata for the viz to render a placeholder node:
+- **Just a slug** (`- slug: data-analytics.spreadsheets`) — used when the Skill has its own `README.md` with full frontmatter. The Skill README is authoritative.
+- **An inline object** — used for not-started Skills that don't yet have a README. Provides enough metadata for the viz to render a node:
   ```yaml
-  - slug: foundations.markdown-and-plain-text
-    name: Markdown and plain text
-    tagline: Plain text formats, modern document conventions.
+  - slug: data-analytics.spreadsheets
+    name: Spreadsheets
+    tagline: Formulas, structure, totals.
     build_state: not-started
     tier_count: 5
-    tier_1_stand_stage: 0
+    complexity_level: 1
+    prereqs: [knowledge-management.files-and-folders]
   ```
 
-When a Skill graduates from not-started to stub, its inline object in the branch frontmatter shrinks back to just `- slug: ...`, and a real `README.md` with full frontmatter is added.
+When a Skill graduates from not-started to stub, its inline object shrinks back to just `- slug: ...`, and a real `README.md` with full frontmatter is added.
 
 ### Skill-only fields
 
 | Field | Type | Required | Meaning |
 |---|---|---|---|
-| `branch` | branch slug | yes | The branch this Skill belongs to (`foundations`). |
+| `branch` | slice slug | yes | The slice this Skill belongs to (`data-analytics`). |
 | `tier_count` | integer | yes | Number of tiers in this Skill's tier map (usually 5). |
-| `tier_1_stand_stage` | integer | yes | The narrative-arc stage (0–9) where this Skill's Tier 1 drill lands. See [narrative-arc.md](narrative-arc.md). |
-| `prereqs` | list of Skill slugs | no (default `[]`) | Other Skills whose Tier 1 makes *this* Skill significantly easier. Skill-level granularity for now; finer (tier/drill-level) prereqs are tracked in prose for v1. |
-| `unlocks` | list of Skill slugs | no (default `[]`) | Other Skills whose higher tiers depend on *this* Skill. The inverse direction of `prereqs`, surfaced so the viz can render edges from either end. |
+| `complexity_level` | integer (0–7) | yes | The radius ring — the business scale where this Skill first matters. See [Complexity levels](#complexity-levels). |
+| `prereqs` | list of Skill slugs | no (default `[]`) | The Skills this one *builds on* — the directed "builds on" roads. Must obey the monotonicity rule: every prereq's `complexity_level` ≤ this Skill's. |
+
+The inverse `unlocks` is **derived automatically** by the generator from everyone's `prereqs` — authors only ever write `prereqs`.
 
 ### Example — a Skill README's frontmatter
 
 ```yaml
 ---
 kind: skill
-slug: foundations.git
-branch: foundations
-name: Git
-tagline: Versioned text. Branching. Pull requests. The repo as a working artifact.
+slug: data-analytics.data-analysis
+branch: data-analytics
+name: Data analysis
+tagline: Making sense of data — finding the signal.
 build_state: stub
 tier_count: 5
-tier_1_stand_stage: 0
-prereqs: []
-unlocks:
-  - automation.spreadsheet-automation
-  - systems.coding
+complexity_level: 1
+prereqs: [data-analytics.spreadsheets, data-analytics.data-management]
 ---
 ```
 
-### Example — a branch README's frontmatter
+### Example — a slice (branch) README's frontmatter
 
 ```yaml
 ---
 kind: branch
-slug: foundations
-name: Foundations
-tagline: The everyday tools a modern knowledge worker reaches for first.
-build_state: stub
+slug: data-analytics
+quadrant: build
+name: Data & analytics
+tagline: Turning what happened into something you can act on.
+build_state: not-started
 skills:
-  - foundations.git
-  - foundations.spreadsheets
+  - data-analytics.spreadsheets
+  - data-analytics.data-management
 ---
 ```
 
-### Why both `prereqs` and `unlocks`
+### On `prereqs` and derived `unlocks`
 
-Strictly, only one direction is needed — `unlocks` is just the reverse of `prereqs`. We declare both because:
+Authors declare only `prereqs` (what a Skill builds on). The generator script:
 
-1. The viz can render edges from either node's perspective without recomputing.
-2. Authors think about it both ways: *what does my Skill build on?* and *what does my Skill enable?*
-3. The generator script validates symmetry — if `A.prereqs` includes `B` but `B.unlocks` doesn't include `A`, that's a typo worth catching.
+1. Derives the reverse `unlocks` automatically, so the data stays symmetric without double-entry.
+2. Emits an `edges` list (prereq → dependent) — the roads the viz draws and routes on.
+3. Warns on any prereq that references an unknown Skill, or that violates **monotonicity** (sits at a higher complexity level than the Skill it unlocks).
 
 ## How to add a new Skill or Drill
 
 ### Adding a new Skill
 
-1. Pick the right branch. If the Skill doesn't fit any existing branch, propose a new branch in `docs/open-questions.md` first.
-2. Create `skills/<branch>/<skill>/README.md` using the existing skill READMEs as templates. Start with the frontmatter block — copy the schema above.
-3. Add the new Skill's slug to the branch `README.md`'s frontmatter `skills:` list, and to its Skills table.
-4. Add `unlocks:` entries on any prereq Skills that should point at the new Skill (and the reverse `prereqs:` entry on this Skill). The generator script will warn if these don't match.
-5. Update `docs/roadmap.md` to show the new Skill in the tree.
+1. Pick the right slice. If the Skill doesn't fit any existing slice, propose a new slice in `docs/open-questions.md` first.
+2. Create `skills/<slice>/<skill>/README.md` using the existing skill READMEs as templates. Start with the frontmatter block — copy the schema above.
+3. Add the new Skill's slug to the slice `README.md`'s frontmatter `skills:` list, and to its Skills table.
+4. Set its `complexity_level` and `prereqs`. Keep prereqs monotonic (each at a complexity level ≤ this Skill's). The generator derives `unlocks` and the road edges automatically and warns on violations.
+5. Update `docs/roadmap.md` to show the new Skill in the map.
 6. Status starts at **stub**.
 7. Regenerate `viz/skills.json` and commit it in the same change.
 

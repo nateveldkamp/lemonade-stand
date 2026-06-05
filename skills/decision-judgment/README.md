@@ -1,16 +1,16 @@
 ---
 kind: branch
-slug: communication
+slug: decision-judgment
 quadrant: craft
-name: Communication
-tagline: Saying what you mean — to people and to machines.
+name: Decision-making & judgment
+tagline: Reasoning well, and knowing good from plausible.
 build_state: not-started
 skills: []
 ---
 
-# Communication
+# Decision-making & judgment
 
-*Saying what you mean — to people and to machines.*
+*Reasoning well, and knowing good from plausible.*
 
 **Quadrant:** Craft — how you work.
 
