@@ -32,6 +32,11 @@
   .foot { color:var(--muted); font-size:.85rem; margin-top:30px; }
   a { color:var(--lemon-d); }
   #copied { color:#15803d; font-weight:700; font-size:.85rem; visibility:hidden; margin-left:8px; }
+  #toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
+    background:#1f2937; color:#fff; padding:11px 16px; border-radius:10px;
+    font-size:.9rem; opacity:0; transition:opacity .2s; pointer-events:none; z-index:50;
+    max-width:90vw; text-align:center; }
+  #toast.show { opacity:.96; }
 </style>
 </head>
 <body>
@@ -51,7 +56,7 @@
       <a class="btn btn-prov" id="open-gemini" target="_blank" rel="noopener">Open in Gemini</a>
       <a class="btn btn-prov" id="open-xai" target="_blank" rel="noopener">Open in Grok</a>
     </div>
-    <p class="hint">Claude and ChatGPT open with the prompt ready. For Gemini and Grok (which don't pre-fill), tap the app, then paste the prompt below.</p>
+    <p class="hint">On a computer, Claude and ChatGPT open with the prompt already typed in. On a phone — and for Gemini and Grok — we copy the prompt for you, then open the app; just paste it in.</p>
   </div>
 
   <div class="card">
@@ -66,6 +71,7 @@
     <a href="https://github.com/nateveldkamp/lemonade-stand" target="_blank" rel="noopener">github.com/nateveldkamp/lemonade-stand</a>.
   </p>
 </div>
+<div id="toast"></div>
 
 <script>
   var GUIDE = "https://nateveldkamp.github.io/lemonade-stand/start.txt";
@@ -78,26 +84,53 @@
   document.getElementById("prompt").value = PROMPT;
 
   var enc = encodeURIComponent(PROMPT);
-  document.getElementById("open-claude").href = "https://claude.ai/new?q=" + enc;
-  document.getElementById("open-chatgpt").href = "https://chatgpt.com/?q=" + enc;
-  // Gemini and Grok have no reliable prefill param; open the app and rely on the pasted prompt.
-  document.getElementById("open-gemini").href = "https://gemini.google.com/app";
-  document.getElementById("open-xai").href = "https://grok.com";
+  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+                 (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+
+  // Desktop: Claude and ChatGPT pre-fill the prompt via ?q=. Mobile: the native
+  // apps usually ignore ?q=, and a plain provider link opens the app via universal
+  // links — so on mobile we open the app's base URL and copy the prompt to the
+  // clipboard, so the learner just pastes. Gemini and Grok never pre-fill.
+  var urls = {
+    claude:  isMobile ? "https://claude.ai/new" : "https://claude.ai/new?q=" + enc,
+    chatgpt: isMobile ? "https://chatgpt.com/"  : "https://chatgpt.com/?q=" + enc,
+    gemini:  "https://gemini.google.com/app",
+    xai:     "https://grok.com"
+  };
+  // Which buttons open with the prompt already filled in (so no copy needed).
+  var prefilled = { claude: !isMobile, chatgpt: !isMobile, gemini: false, xai: false };
+
+  function copySync() {
+    var ta = document.getElementById("prompt");
+    ta.select(); ta.setSelectionRange(0, 99999);
+    try { document.execCommand("copy"); } catch (e) {}                 // synchronous, runs before navigation
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try { navigator.clipboard.writeText(ta.value); } catch (e) {}
+    }
+  }
+  function toast(msg) {
+    var t = document.getElementById("toast");
+    t.textContent = msg; t.classList.add("show");
+    setTimeout(function () { t.classList.remove("show"); }, 2200);
+  }
+
+  Object.keys(urls).forEach(function (id) {
+    var el = document.getElementById("open-" + id);
+    el.href = urls[id];
+    el.addEventListener("click", function (e) {
+      if (prefilled[id]) return;            // desktop Claude/ChatGPT: let the pre-filled link open
+      e.preventDefault();
+      copySync();                            // put the prompt on the clipboard first
+      toast("Prompt copied — paste it into the app");
+      window.location.href = urls[id];       // open the app (mobile) or site
+    });
+  });
 
   document.getElementById("copy").addEventListener("click", function () {
-    var ta = document.getElementById("prompt");
-    ta.select();
-    ta.setSelectionRange(0, 99999);
-    function done() {
-      var c = document.getElementById("copied");
-      c.style.visibility = "visible";
-      setTimeout(function () { c.style.visibility = "hidden"; }, 1600);
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(ta.value).then(done, function () { document.execCommand("copy"); done(); });
-    } else {
-      document.execCommand("copy"); done();
-    }
+    copySync();
+    var c = document.getElementById("copied");
+    c.style.visibility = "visible";
+    setTimeout(function () { c.style.visibility = "hidden"; }, 1600);
   });
 </script>
 </body>
