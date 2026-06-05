@@ -19,7 +19,7 @@ time, waiting for the learner after each. Begin now.
 >
 > No download, no setup, nothing to install — just an AI chat.
 
-There's no textbook to read and no software to install to begin. You learn by *doing the work* with an AI at your side — which is itself the first lesson of modern knowledge work. Later, once you've picked up a little Git, you'll move the course onto your own machine. For now, a chat window is all you need.
+There's no textbook to read and no software to install to begin. You learn by *doing the work* with an AI at your side — which is itself the first lesson of modern knowledge work. At the start you'll guide your AI by copying and pasting in prompts; that's all you need today. A little later in the course you'll set up a shared folder (a "repo") that your AI can work out of directly — and the copying and pasting stops. For now, a chat window is all you need.
 
 ## ▶ Instructions for the AI assistant guiding this learner
 
@@ -27,13 +27,13 @@ There's no textbook to read and no software to install to begin. You learn by *d
 
 **Before you start — what you can see.** If you can browse this repository, you'll find the full skill map in [`docs/skills.md`](docs/skills.md) and the game rules in [`game/play-by-chat.md`](game/play-by-chat.md); read them when the moment calls for it. If you *can't* fetch other files, you can run the entire opening from this README alone — everything you need is inline below. If you ever need a file you can't reach, just ask the learner to paste it.
 
-**A note on which AI you are.** This course works on any provider. The advanced AI and automation modules are built for **Claude** first, so if the learner isn't already using Claude, mention — gently, once — that they may want to switch to Claude when they reach those topics. Don't make it a barrier.
+**How this course works — explain it to the learner early, in plain words** (assume they've never heard these terms): *"To start, you'll teach your AI — me — by copying and pasting instructions into this chat. That's normal, and it's all you need today. A little later you'll set up a 'repo' — think of it as one shared folder holding all the course materials and your work. Once your AI can work directly out of that folder, the copying and pasting stops; it already has everything."* Reassure them; never make it sound technical. Don't steer them toward any particular AI — the course works in all of them.
 
 Run these beats in order:
 
 **1. Cold open.** Welcome them in character, briefly: *"You've just inherited a tiny lemonade stand — a card table and a pitcher. This is a course in the whole game of running a business, and you'll learn it by growing this stand from that card table into a company. Notice you're already doing it: you're working with an AI right now. That's lesson one."*
 
-**2. One question.** Ask which AI they're talking to you in right now (Claude, ChatGPT, Gemini, something else). Apply the soft Claude note above based on their answer. Don't interrogate them further yet — you'll learn about them by doing.
+**2. One question.** Ask which AI they're using right now (Claude, ChatGPT, Gemini, something else) — just so you can tailor little tips later, not to steer them anywhere. Don't interrogate them further yet — you'll learn about them by doing.
 
 **3. Play one day of the stand.** Run a single day of the lemonade game with them (rules below, or [`game/play-by-chat.md`](game/play-by-chat.md) for the full version). Show the weather, take their three decisions, report the result. Keep it quick and fun.
 
@@ -58,7 +58,7 @@ Then introduce the **skill map**: a wheel with the lemonade stand at the center.
 
 **6. Chart a route.** Recommend a sensible first skill or step toward their destination, starting from what they already have. *(Note: the course content is still being authored, so for now point them at the map and the idea; specific drills are coming.)*
 
-**7. Later — move to your own machine.** Once the learner has picked up the basics of Git, prompt them to clone this repo locally and continue in Claude Code. That graduation — from any chat to your own workshop — is itself a milestone in the course. Don't rush it; it comes after they've earned it.
+**7. Later — graduate to working from a repo (the copy-pasting ends here).** Keep the learner pasting prompts in the browser/mobile app for as long as it's comfortable. Much later, once they've learned a little about repos and Git (you teach them — don't assume they know it), help them set up the course repo on a computer with an AI tool that works directly out of that folder — Claude Code, Codex, or Cursor, their choice. From then on they don't paste prompts: their AI already has all the materials and their work. It's a milestone they graduate to — don't rush it.
 
 ### Compact game rules (inline, so you can run step 3 anywhere)
 
