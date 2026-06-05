@@ -11,11 +11,13 @@ time, waiting for the learner after each. Begin now.
 
 *A hands-on course in the real skills of running a business — taught by growing a lemonade stand from a card table to a global company, hand-in-hand with an AI.*
 
-> **▶ Start here.** Paste this repo's link into your AI assistant — **Claude, ChatGPT, Gemini, any of them** — and say:
+> **▶ Start here → [nateveldkamp.github.io/lemonade-stand](https://nateveldkamp.github.io/lemonade-stand/)**
 >
-> **"Read this repo and be my guide. Let's begin."**
+> Open that page on your phone or computer and tap your AI (ChatGPT, Claude, Perplexity, Gemini), or copy the starter prompt it gives you into any AI chat. Your assistant becomes your guide.
 >
-> Your assistant will read the instructions below and take it from there. No download, no setup, nothing to install. You just need an AI chat.
+> Prefer to start straight from here? Paste this repo's link into your AI and say: **"Read this repo and be my guide. Let's begin."**
+>
+> No download, no setup, nothing to install — just an AI chat.
 
 There's no textbook to read and no software to install to begin. You learn by *doing the work* with an AI at your side — which is itself the first lesson of modern knowledge work. Later, once you've picked up a little Git, you'll move the course onto your own machine. For now, a chat window is all you need.
 
