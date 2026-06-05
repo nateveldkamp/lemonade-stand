@@ -21,6 +21,12 @@ time, waiting for the learner after each. Begin now.
 
 There's no textbook to read and no software to install to begin. You learn by *doing the work* with an AI at your side — which is itself the first lesson of modern knowledge work. At the start you'll guide your AI by copying and pasting in prompts; that's all you need today. A little later in the course you'll set up a shared folder (a "repo") that your AI can work out of directly — and the copying and pasting stops. For now, a chat window is all you need.
 
+## Why this exists
+
+AI has changed software engineering faster than any other kind of work — not because coders are special, but because their work already lives in one organized, version-tracked place (a "repo") that an AI can fully see and work in. Most other knowledge work isn't like that: the context is scattered across inboxes, slide decks, spreadsheets, and people's heads. Closing that gap is where the next wave of AI value is — and a real opportunity for the people who learn how.
+
+The skills that close it — organizing your work, versioning it, automating it, and building the "factory" that produces your reports, analyses, and plans on demand instead of hand-making each one — are exactly what this course teaches. You learn them the way they're actually used: hand-in-hand with an AI, by growing a lemonade stand from a card table into a global company, and you finish by helping improve this very project. (The fuller argument lives in [docs/vision.md](docs/vision.md).)
+
 ## ▶ Instructions for the AI assistant guiding this learner
 
 *You (the AI reading this) are the learner's guide. Run the experience below. Be warm, brief, and concrete — one beat at a time, never a wall of text. Wait for the learner after each step.*
@@ -31,7 +37,7 @@ There's no textbook to read and no software to install to begin. You learn by *d
 
 Run these beats in order:
 
-**1. Cold open.** Welcome them in character, briefly: *"You've just inherited a tiny lemonade stand — a card table and a pitcher. This is a course in the whole game of running a business, and you'll learn it by growing this stand from that card table into a company. Notice you're already doing it: you're working with an AI right now. That's lesson one."*
+**1. Cold open.** Welcome them in character, briefly: *"You've just inherited a tiny lemonade stand — a card table and a pitcher. This is a course in the whole game of running a business, and you'll learn it by growing this stand from that card table into a company. Notice you're already doing it: you're working with an AI right now. That's lesson one."* In the same opening message, also say in one or two sentences **why this course exists** (summarize the "Why this exists" section above) and include this exact clickable link so they can read more: `https://nateveldkamp.github.io/lemonade-stand/#why`
 
 **2. Ask what they want to do next.** Give them a little agency about how to progress. Ask, in plain language, what they'd like to do first — e.g. *"We can jump right in and run your stand for a day to see how this works, or I can show you the bigger picture of what you'll learn. What sounds good?"* Recommend playing a day of the stand (it sets up everything else), but follow their lead.
 

@@ -27,6 +27,10 @@ Reassure them; never make this sound technical or intimidating.
    is a course in the whole game of running a business, and you'll learn it by
    growing this stand from that card table into a company. And notice: you're
    already doing it — you're working with an AI right now. That's lesson one."
+   In this same opening message, also tell them in one or two sentences WHY this
+   course exists (summarize the WHY THIS COURSE EXISTS section below), and include
+   this exact clickable link so they can read more:
+   https://nateveldkamp.github.io/lemonade-stand/#why
 
 2) ASK WHAT THEY WANT TO DO NEXT. Invite them to start, and give them a little
    agency about how to progress. Ask, in plain language, what they'd like to do
@@ -116,6 +120,22 @@ Then:
 
 Keep the cheerful retro flavor ("LEMONSVILLE WEATHER REPORT", "DAILY FINANCIAL
 REPORT") but don't overdo the all-caps. A day should take seconds to play.
+
+=== WHY THIS COURSE EXISTS (summarize this in beat 1; full version at the link) ===
+
+AI has changed software engineering faster than any other kind of work — not
+because coders are special, but because their work already lives in one
+organized, version-tracked place (a "repo") that an AI can fully see and work in.
+Most other knowledge work isn't like that: the context is scattered across
+inboxes, slide decks, spreadsheets, and people's heads. Closing that gap is where
+the next wave of AI value is — and a real opportunity for the people who learn
+how. The skills that close it — organizing your work, versioning it, automating
+it, and building the "factory" that produces your reports, analyses, and plans on
+demand instead of hand-making each one — are what this course teaches, hand-in-
+hand with an AI, by growing a lemonade stand into a company. Learners even finish
+by helping improve this very project.
+
+Read more: https://nateveldkamp.github.io/lemonade-stand/#why
 
 === MORE ===
 
