@@ -35,6 +35,24 @@ No more zipped folder + getting-started PDF. The new front door: a learner paste
 - Move/trim contributor content (currently in README) to a short pointer.
 - Later: `llms.txt` for discoverability; update prelude + docs to match.
 
+## Delivery architecture (decided 2026-06-04)
+
+The hard problem isn't kickoff, it's *ongoing* content access: most AI tools can't reliably fetch raw GitHub files, and cached/search results go stale. Resolution — a **staged, browser/mobile-first** model:
+
+- **Phase 1 (long-lived, any AI, browser + mobile):** learner pastes a *tiny* prompt that points to a **GitHub Pages site** (`nateveldkamp.github.io/lemonade-stand`). Pages is a normal indexable website, so browsing/search-capable tools (incl. the Claude/ChatGPT/Gemini mobile apps) reach it far more reliably than raw-file links. Depth lives on the page; copy-paste stays minimal. **Keep learners in the browser/mobile app as long as possible.**
+- **Phase 2 (much later, on a computer):** clone the repo into an agentic tool (Claude Code, Codex, etc.) for full reliable repo access. Deferred.
+- **Honest caveat:** a tool with web access fully off still can't reach any URL; the tiny prompt then tells the AI to ask the learner to paste the page (one tap from the site). Degrade gracefully.
+
+**Site files added at repo root (GitHub Pages source = root, `.nojekyll`):**
+- `index.html` — mobile-friendly landing: "Copy starter prompt" + one-tap "Open in ChatGPT/Claude/Perplexity/Gemini" deep links (deep-link prompt is short and points to start.txt).
+- `start.txt` — canonical full AI-guide instructions (beats + game rules + skill map) the prompt points the AI to fetch and follow.
+- `llms.txt` — AI-discovery pointer.
+- `.nojekyll` — serve files as-is.
+
+**To enable:** repo Settings → Pages → Deploy from a branch → `main` / root. URLs: site `https://nateveldkamp.github.io/lemonade-stand/`, guide `.../start.txt`.
+
+**Duplication note:** the guide content now lives in 3 places (README AI section, `start.txt`, and the inline starter prompt). Consolidate later — `start.txt` is canonical.
+
 ## Naming / narrative TODOs (from this discussion)
 - Use **"accounting"** not "bookkeeping" everywhere (Finance & accounting slice).
 - Weave **engineering & R&D** into the narrative arc as the stand scales (new recipes, building equipment, process engineering) — possibly its own skill/thread later.

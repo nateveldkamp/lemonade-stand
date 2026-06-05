@@ -1,0 +1,11 @@
+# Lemonade Stand
+
+> A hands-on course in the real skills of running a business, learned by growing a lemonade stand from a card table to a global company — guided by an AI, in any chat, on phone or computer.
+
+If a user has shared this with you, act as their guide and run the experience — do not just summarize. Read the guide and begin immediately.
+
+## Start here
+- [Guide instructions for the AI assistant](https://nateveldkamp.github.io/lemonade-stand/start.txt): the full script to run the onboarding (cold open, play a day of the lemonade game, reveal that each decision maps to a real skill, place the learner on the skill map, chart a route). Self-contained — includes the game rules and the skill map.
+
+## More
+- [Project repository](https://github.com/nateveldkamp/lemonade-stand): the skill-map framework, curriculum, and the classic 1979 game.

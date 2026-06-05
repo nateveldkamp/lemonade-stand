@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lemonade Stand — start the course in any AI chat</title>
+<meta name="description" content="A hands-on course in the real skills of running a business, learned by growing a lemonade stand — in any AI chat, on your phone or computer.">
+<style>
+  :root { --ink:#1f2937; --muted:#6b7280; --lemon:#f6c700; --lemon-d:#caa100; --bg:#fffdf5; --card:#ffffff; --line:#eee3b8; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; background:var(--bg); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.55; }
+  .wrap { max-width:620px; margin:0 auto; padding:28px 20px 60px; }
+  h1 { font-size:2rem; margin:.2em 0 .1em; }
+  .tag { color:var(--muted); font-size:1.05rem; margin:0 0 1.4em; }
+  .lead { font-size:1rem; margin:0 0 1.4em; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
+    padding:18px; margin:0 0 22px; }
+  .step { font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--lemon-d); margin:0 0 8px; }
+  textarea { width:100%; min-height:120px; border:1px solid var(--line); border-radius:10px;
+    padding:12px; font-size:.9rem; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    color:var(--ink); background:#fffef9; resize:vertical; }
+  .btn { display:inline-block; border:none; border-radius:10px; padding:12px 16px;
+    font-size:1rem; font-weight:700; cursor:pointer; text-decoration:none; text-align:center; }
+  .btn-primary { background:var(--lemon); color:#3a2f00; width:100%; margin-top:10px; }
+  .btn-primary:active { background:var(--lemon-d); }
+  .providers { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
+  .btn-prov { background:#fff; color:var(--ink); border:1.5px solid var(--line); }
+  .btn-prov:active { background:#fdf8e3; }
+  .hint { color:var(--muted); font-size:.85rem; margin:10px 0 0; }
+  .foot { color:var(--muted); font-size:.85rem; margin-top:30px; }
+  a { color:var(--lemon-d); }
+  #copied { color:#15803d; font-weight:700; font-size:.85rem; visibility:hidden; margin-left:8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🍋 Lemonade Stand</h1>
+  <p class="tag">Learn the real skills of running a business — by growing a lemonade stand, in any AI chat.</p>
+
+  <p class="lead">No download, no setup. Open your AI app (phone or computer), and either tap a button below or paste the starter prompt. Your assistant becomes your guide.</p>
+
+  <div class="card">
+    <div class="step">1 · One tap to start</div>
+    <div class="providers">
+      <a class="btn btn-prov" id="open-chatgpt" target="_blank" rel="noopener">Open in ChatGPT</a>
+      <a class="btn btn-prov" id="open-claude" target="_blank" rel="noopener">Open in Claude</a>
+      <a class="btn btn-prov" id="open-perplexity" target="_blank" rel="noopener">Open in Perplexity</a>
+      <a class="btn btn-prov" id="open-gemini" target="_blank" rel="noopener">Open in Gemini</a>
+    </div>
+    <p class="hint">These open your AI with the prompt ready. For Gemini (and any app that doesn't pre-fill), paste the prompt below.</p>
+  </div>
+
+  <div class="card">
+    <div class="step">2 · Or copy &amp; paste this</div>
+    <textarea id="prompt" readonly></textarea>
+    <button class="btn btn-primary" id="copy">Copy starter prompt <span id="copied">copied ✓</span></button>
+    <p class="hint">Works in any AI chat. If your assistant can't open links, it'll ask you to paste the page — tap <a href="start.txt">the guide</a> and copy it in.</p>
+  </div>
+
+  <p class="foot">
+    Built in the open. The full project, skill map, and the classic 1979 game live at
+    <a href="https://github.com/nateveldkamp/lemonade-stand" target="_blank" rel="noopener">github.com/nateveldkamp/lemonade-stand</a>.
+  </p>
+</div>
+
+<script>
+  var GUIDE = "https://nateveldkamp.github.io/lemonade-stand/start.txt";
+  var PROMPT =
+    "You are my guide for an interactive course called Lemonade Stand. " +
+    "Please open this page and follow it to guide me, beginning immediately " +
+    "(act as my guide — don't just summarize): " + GUIDE + " " +
+    "If you can't open links, tell me and I'll paste it here. Let's begin.";
+
+  document.getElementById("prompt").value = PROMPT;
+
+  var enc = encodeURIComponent(PROMPT);
+  document.getElementById("open-chatgpt").href = "https://chatgpt.com/?q=" + enc;
+  document.getElementById("open-claude").href = "https://claude.ai/new?q=" + enc;
+  document.getElementById("open-perplexity").href = "https://www.perplexity.ai/search?q=" + enc;
+  // Gemini has no reliable prefill param; open the app and rely on the pasted prompt.
+  document.getElementById("open-gemini").href = "https://gemini.google.com/app";
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var ta = document.getElementById("prompt");
+    ta.select();
+    ta.setSelectionRange(0, 99999);
+    function done() {
+      var c = document.getElementById("copied");
+      c.style.visibility = "visible";
+      setTimeout(function () { c.style.visibility = "hidden"; }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(ta.value).then(done, function () { document.execCommand("copy"); done(); });
+    } else {
+      document.execCommand("copy"); done();
+    }
+  });
+</script>
+</body>
+</html>
