@@ -32,6 +32,8 @@ This repo is an async training program for knowledge workers, not a product. The
 
 The canonical rules are in `docs/conventions.md`. Follow it. The reminders most likely to come up in AI-assisted edits:
 
+- **Never use em dashes (—).** They read as AI-generated. Rewrite with a period, comma, colon, parentheses, or "and"/"but" instead. Applies to all prose, docs, commit messages, and code comments.
+- **Write in Nate's voice:** lowercase, casual, brief, direct, conversational, contractions. Get to the point; skip hedging and marketing-speak. Emulate the maintainer's own writing, not AI style. Learner-facing content still follows the warmer tone in `docs/conventions.md`, but keep it tight and human, never em-dashed.
 - Markdown only. **No horizontal rules (`---`).** Use headings.
 - **Lowercase kebab-case** for new filenames. Uppercase exceptions only: `README.md`, `CLAUDE.md`, `CONTRIBUTORS.md`, `LICENSE`, `CHANGELOG`.
 - No screenshots unless explicitly requested.

@@ -38,6 +38,7 @@ If you're proposing a change to these rules, do it via PR against this file and 
 
 ## Tone and content
 
+- **Never use em dashes (—).** They read as AI-generated and the maintainer dislikes them. Rewrite with a period, comma, colon, parentheses, or "and"/"but" instead. This holds in all prose, docs, commit messages, and code comments.
 - **Plain English.** Define jargon on first use.
 - **Tone is hybrid: professional layout, warm voice.** Not playful (no mascot, no jokes for their own sake), not corporate (no marketing-speak). Think *a friendly senior colleague walking you through it* — clean, present, kind, never condescending.
 - **Curate, don't recreate.** When an external doc is canonical (Anthropic, GitHub, etc.), link it. Don't paraphrase reference material that will go stale.
