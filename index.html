@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lemonade Stand — start the course in any AI chat</title>
-<meta name="description" content="A hands-on course in the real skills of running a business, learned by growing a lemonade stand — in any AI chat, on your phone or computer.">
+<title>Lemonade Stand — start the course</title>
+<meta name="description" content="A hands-on, interactive course in the real skills of running a business, learned by growing a lemonade stand — on your phone or computer, paired with your AI chat.">
 <style>
   :root { --ink:#1f2937; --muted:#6b7280; --lemon:#f6c700; --lemon-d:#caa100; --bg:#fffdf5; --card:#ffffff; --line:#eee3b8; }
   * { box-sizing: border-box; }
@@ -18,20 +18,22 @@
     padding:18px; margin:0 0 22px; }
   .step { font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
     color:var(--lemon-d); margin:0 0 8px; }
-  textarea { width:100%; min-height:120px; border:1px solid var(--line); border-radius:10px;
+  .card ul { padding-left:1.2em; margin:0 0 1em; }
+  .card li { margin-bottom:.4em; }
+  table { width:100%; border-collapse:collapse; font-size:.9rem; margin:0 0 1em; }
+  th, td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  textarea { width:100%; min-height:160px; border:1px solid var(--line); border-radius:10px;
     padding:12px; font-size:.9rem; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-    color:var(--ink); background:#fffef9; resize:vertical; }
+    color:var(--ink); background:#fffef9; resize:vertical; margin:0 0 10px; }
   .btn { display:inline-block; border:none; border-radius:10px; padding:12px 16px;
     font-size:1rem; font-weight:700; cursor:pointer; text-decoration:none; text-align:center; }
-  .btn-primary { background:var(--lemon); color:#3a2f00; width:100%; margin-top:10px; }
+  .btn-primary { background:var(--lemon); color:#3a2f00; width:100%; }
   .btn-primary:active { background:var(--lemon-d); }
-  .providers { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
-  .btn-prov { background:#fff; color:var(--ink); border:1.5px solid var(--line); }
-  .btn-prov:active { background:#fdf8e3; }
   .hint { color:var(--muted); font-size:.85rem; margin:10px 0 0; }
   .foot { color:var(--muted); font-size:.85rem; margin-top:30px; }
   a { color:var(--lemon-d); }
-  #copied { color:#15803d; font-weight:700; font-size:.85rem; visibility:hidden; margin-left:8px; }
+  .copied { color:#15803d; font-weight:700; font-size:.85rem; visibility:hidden; margin-left:8px; }
   #toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
     background:#1f2937; color:#fff; padding:11px 16px; border-radius:10px;
     font-size:.9rem; opacity:0; transition:opacity .2s; pointer-events:none; z-index:50;
@@ -44,36 +46,73 @@
   <h1>🍋 Lemonade Stand</h1>
   <p class="tag">Learn to build and run a business — and to work with AI — as one skill, by growing a lemonade stand.</p>
 
-  <p class="lead">This is one course in two things at once: how to <strong>build and run a business</strong>, and how to do that work <strong>hand-in-hand with AI</strong>. You learn them <em>together</em>, because that's how the work actually happens now — all by growing a lemonade stand from a card table into a company, in any AI chat.</p>
+  <p class="lead">This is one course in two things at once: how to <strong>build and run a business</strong>, and how to do that work <strong>hand-in-hand with AI</strong>. You learn them <em>together</em>, because that's how the work actually happens now.</p>
 
-  <p class="lead">No download, no setup. Open your AI app (phone or computer), and either tap a button below or paste the starter prompt. Your assistant becomes your guide.</p>
-
-  <p class="lead" style="font-size:.92rem;color:var(--muted)">To start, you'll guide your AI by pasting in prompts — that's all you need today. A little later in the course you'll set up a shared folder (a "repo") your AI can work out of directly, and the copying and pasting stops. We'll walk you through it; no experience needed.</p>
+  <p class="lead">No download, no setup — just keep reading. This page is the start of the course. Along the way you'll see boxes you can copy into your AI chat (Claude, ChatGPT, Gemini, or whatever you use) to bring it along for the ride.</p>
 
   <div class="card">
-    <div class="step">1 · One tap to start</div>
-    <div class="providers">
-      <a class="btn btn-prov" id="open-claude" target="_blank" rel="noopener">Open in Claude</a>
-      <a class="btn btn-prov" id="open-chatgpt" target="_blank" rel="noopener">Open in ChatGPT</a>
-      <a class="btn btn-prov" id="open-gemini" target="_blank" rel="noopener">Open in Gemini</a>
-      <a class="btn btn-prov" id="open-xai" target="_blank" rel="noopener">Open in Grok</a>
-    </div>
-    <p class="hint">On a computer, Claude and ChatGPT open with the prompt already typed in. On a phone — and for Gemini and Grok — we copy the prompt for you, then open the app; just paste it in.</p>
+    <div class="step">How this works</div>
+    <p>Read this page top to bottom, on your phone or computer. When you reach a box with a "Copy prompt" button, copy it and paste it into your AI chat — each one is short and makes sense on its own. Reply to your AI for a bit, then come back here and keep reading.</p>
+    <p class="hint">A little later in the course, you'll set up a "repo" — a shared folder your AI can work from directly — and the copying and pasting stops. Nothing to set up today; we'll walk you through it when the time comes.</p>
   </div>
 
   <div class="card">
-    <div class="step">2 · Or copy &amp; paste this</div>
-    <textarea id="prompt" readonly></textarea>
-    <button class="btn btn-primary" id="copy">Copy starter prompt <span id="copied">copied ✓</span></button>
-    <p class="hint">Works in any AI chat. If your assistant can't open links, it'll ask you to paste the page — tap <a href="start.txt" target="_blank" rel="noopener">the guide</a> and copy it in.</p>
+    <div class="step">Your stand</div>
+    <p>You've just inherited a tiny lemonade stand — a card table, a pitcher, and about two dollars. That's the whole business, for now. This course is about growing that stand into a real company, one decision at a time, hand-in-hand with an AI — the way work actually happens today.</p>
+    <p><a href="about.html">Why a lemonade stand, and why business + AI together? Read the fuller story →</a></p>
   </div>
 
-  <section class="card" id="why">
-    <h2 style="margin:.1em 0 .5em;font-size:1.3rem">Why this exists</h2>
-    <p>AI has transformed software engineering faster than any other kind of work — because that work already lives in an organized, version-tracked "repo" an AI can fully use. Most knowledge work's context is scattered across inboxes, decks, and spreadsheets; closing that gap is the opportunity, and the skills that close it are what you'll learn here.</p>
-    <p>Why a lemonade stand? Why learn business and AI together? And what does it mean to "play the whole game"?</p>
-    <p><a href="about.html">Read the fuller story →</a></p>
-  </section>
+  <div class="card">
+    <div class="step">Day 1 · play the game</div>
+    <p>Here's how a day at the stand goes:</p>
+    <ul>
+      <li>The weather rolls in — sunny, cloudy (maybe a storm), or scorching hot.</li>
+      <li>You decide three things: how many glasses of lemonade to make, how many advertising signs to put up (15c each), and what price to charge per glass.</li>
+      <li>At the end of the day, you find out how many glasses sold, what you spent, and whether you made money.</li>
+    </ul>
+    <p>You're starting with <strong>$2.00</strong>, and it costs <strong>2 cents</strong> to make a glass of lemonade today.</p>
+    <p>Copy this to your AI and play day 1:</p>
+    <textarea id="prompt1" readonly></textarea>
+    <button class="btn btn-primary" onclick="copyPrompt('prompt1','copied1')">Copy prompt <span class="copied" id="copied1">copied ✓</span></button>
+  </div>
+
+  <div class="card">
+    <div class="step">The reveal</div>
+    <p>However today went, here's the thing: that little game is the whole course in miniature. Every decision you just made is a real business skill.</p>
+    <table>
+      <tr><th>In the game, you decided…</th><th>…which is really the skill of</th></tr>
+      <tr><td>Price per glass</td><td>Pricing (Marketing)</td></tr>
+      <tr><td>How many signs to make</td><td>Marketing</td></tr>
+      <tr><td>How many glasses to make</td><td>Inventory (Operations) + unit economics (Finance)</td></tr>
+      <tr><td>Reacting to weather &amp; storms</td><td>Decision-making + risk</td></tr>
+      <tr><td>Whether you turned a profit</td><td>Accounting (Finance)</td></tr>
+    </table>
+    <p>The rest of this course is about getting better at each of these — and a lot more — as the stand grows from a card table into a company.</p>
+  </div>
+
+  <div class="card">
+    <div class="step">The skill map</div>
+    <p>Picture a wheel with your lemonade stand at the center. As the business grows bigger and more complex, the skills you need sit further out. There are 16 of them, in four groups:</p>
+    <ul>
+      <li><strong>Craft</strong> — how you work: Communication, Knowledge &amp; context management, Planning &amp; execution, Decision-making &amp; judgment</li>
+      <li><strong>Build</strong> — make things: Data &amp; analytics, Software &amp; engineering, Automation &amp; IT systems, Product &amp; design</li>
+      <li><strong>Run</strong> — the business functions: Finance &amp; accounting, Operations &amp; supply chain, Marketing, Sales &amp; business development, Customer success</li>
+      <li><strong>Lead</strong> — scale and steer: People &amp; leadership, Strategy &amp; corporate development, Legal, risk &amp; governance</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="step">Find your starting point</div>
+    <p>Now's a good moment to figure out where <em>you</em> already are on that map, and where you'd like to go. Copy this to your AI:</p>
+    <textarea id="prompt2" readonly></textarea>
+    <button class="btn btn-primary" onclick="copyPrompt('prompt2','copied2')">Copy prompt <span class="copied" id="copied2">copied ✓</span></button>
+  </div>
+
+  <div class="card">
+    <div class="step">What's next</div>
+    <p>The drills for each skill are still being built — for now, this page and your conversation with your AI are your orientation. Check back as new material lands.</p>
+    <p>When you're ready to go deeper, the next step is setting up this project as a "repo" — a shared folder your AI can work from directly, so the copying and pasting stops. We'll guide you through that when the time comes.</p>
+  </div>
 
   <p class="foot">
     Built in the open. The full project, skill map, and the classic 1979 game live at
@@ -83,64 +122,47 @@
 <div id="toast"></div>
 
 <script>
-  var GUIDE = "https://nateveldkamp.github.io/lemonade-stand/start.txt";
-  var PROMPT =
-    "You are my guide for an interactive course called Lemonade Stand. " +
-    "Please open this page and follow it to guide me, beginning immediately " +
-    "(act as my guide — don't just summarize): " + GUIDE + " " +
-    "If you can't open links, tell me and I'll paste it here. Let's begin.";
+  var PROMPT1 =
+    "I'd like to play a quick day of the classic 1979 Lemonade Stand game with you as the game master — I'm running a tiny lemonade stand.\n\n" +
+    "Setup: I have $2.00. It costs 2 cents to make each glass of lemonade. Advertising signs cost 15 cents each.\n\n" +
+    "1. Roll today's weather: 60% sunny (normal sales), 20% cloudy (lower sales, with a small chance it becomes a thunderstorm that ruins the whole batch — don't tell me that part yet), or 20% hot (sales roughly double; it's too early in the season for a hot day, so treat this as sunny). Tell me the weather.\n" +
+    "2. Ask me how many glasses to make, how many signs to make, and my price per glass in cents. Check I can afford it (glasses x 2c + signs x 15c, total no more than $2.00).\n" +
+    "3. Work out how many glasses I sold — lower prices and more signs sell more, weather scales it up or down, and I can't sell more than I made (a thunderstorm means zero sold). Then report glasses sold, income, expenses, profit, and my new total.\n\n" +
+    "Keep it quick, fun, and in the retro spirit of the original game. What's the weather?";
 
-  document.getElementById("prompt").value = PROMPT;
+  var PROMPT2 =
+    "I'm working through a course called Lemonade Stand, which uses a skill map: a wheel with a lemonade stand at the center, and 16 skills arranged in 4 groups further out as a business grows:\n\n" +
+    "- Craft (how you work): Communication, Knowledge & context management, Planning & execution, Decision-making & judgment\n" +
+    "- Build (make things): Data & analytics, Software & engineering, Automation & IT systems, Product & design\n" +
+    "- Run (business functions): Finance & accounting, Operations & supply chain, Marketing, Sales & business development, Customer success\n" +
+    "- Lead (scale & steer): People & leadership, Strategy & corporate development, Legal, risk & governance\n\n" +
+    "I just played a day of the lemonade stand game, where I set a price, decided how many signs and glasses to make, dealt with the weather, and found out if I made a profit.\n\n" +
+    "Here's a bit about me: [say what you're already good at, and what you'd like to get better at].\n\n" +
+    "Based on that, help me figure out where I'm already strong on this map (\"you are here\"), where I might want to head next (\"destination\"), and suggest one specific skill to focus on first.";
 
-  var enc = encodeURIComponent(PROMPT);
-  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-                 (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  document.getElementById("prompt1").value = PROMPT1;
+  document.getElementById("prompt2").value = PROMPT2;
 
-  // Desktop: Claude and ChatGPT pre-fill the prompt via ?q=. Mobile: the native
-  // apps usually ignore ?q=, and a plain provider link opens the app via universal
-  // links — so on mobile we open the app's base URL and copy the prompt to the
-  // clipboard, so the learner just pastes. Gemini and Grok never pre-fill.
-  var urls = {
-    claude:  isMobile ? "https://claude.ai/new" : "https://claude.ai/new?q=" + enc,
-    chatgpt: isMobile ? "https://chatgpt.com/"  : "https://chatgpt.com/?q=" + enc,
-    gemini:  "https://gemini.google.com/app",
-    xai:     "https://grok.com"
-  };
-  // Which buttons open with the prompt already filled in (so no copy needed).
-  var prefilled = { claude: !isMobile, chatgpt: !isMobile, gemini: false, xai: false };
-
-  function copySync() {
-    var ta = document.getElementById("prompt");
-    ta.select(); ta.setSelectionRange(0, 99999);
-    try { document.execCommand("copy"); } catch (e) {}                 // synchronous, runs before navigation
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      try { navigator.clipboard.writeText(ta.value); } catch (e) {}
-    }
-  }
   function toast(msg) {
     var t = document.getElementById("toast");
     t.textContent = msg; t.classList.add("show");
     setTimeout(function () { t.classList.remove("show"); }, 2200);
   }
 
-  Object.keys(urls).forEach(function (id) {
-    var el = document.getElementById("open-" + id);
-    el.href = urls[id];
-    el.addEventListener("click", function (e) {
-      if (prefilled[id]) return;            // desktop Claude/ChatGPT: let the pre-filled link open
-      e.preventDefault();
-      copySync();                            // put the prompt on the clipboard first
-      toast("Prompt copied — paste it into the app");
-      window.open(urls[id], "_blank", "noopener");  // new tab — keep this page open
-    });
-  });
-
-  document.getElementById("copy").addEventListener("click", function () {
-    copySync();
-    var c = document.getElementById("copied");
-    c.style.visibility = "visible";
-    setTimeout(function () { c.style.visibility = "hidden"; }, 1600);
-  });
+  function copyPrompt(id, copiedId) {
+    var ta = document.getElementById(id);
+    ta.select(); ta.setSelectionRange(0, 99999);
+    try { document.execCommand("copy"); } catch (e) {}
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      try { navigator.clipboard.writeText(ta.value); } catch (e) {}
+    }
+    var c = document.getElementById(copiedId);
+    if (c) {
+      c.style.visibility = "visible";
+      setTimeout(function () { c.style.visibility = "hidden"; }, 1600);
+    }
+    toast("Copied — paste it into your AI chat");
+  }
 </script>
 </body>
 </html>
