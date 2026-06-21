@@ -16,9 +16,13 @@
   h2 { font-size:1.3rem; margin:1.7em 0 .4em; }
   p { margin:0 0 1.1em; }
   .lead { font-size:1.12rem; color:#374151; }
-  .questions { margin:0 0 1.1em; padding:14px 18px; background:#fffef9; border:1px solid var(--line);
-    border-radius:12px; }
-  .questions li { margin:.2em 0; }
+  .questions { list-style:none; counter-reset:q; margin:0 0 1.3em; padding:4px 6px;
+    background:#fffef9; border:1px solid var(--line); border-radius:12px; }
+  .questions li { display:flex; align-items:center; gap:13px; padding:13px 14px; font-size:1.02rem; }
+  .questions li + li { border-top:1px solid var(--line); }
+  .questions li::before { counter-increment:q; content:counter(q); flex:none;
+    width:27px; height:27px; border-radius:50%; background:var(--lemon); color:#3a2f00;
+    font-weight:700; font-size:.88rem; display:flex; align-items:center; justify-content:center; }
   blockquote { margin:1.2em 0; padding:.3em 0 .3em 16px; border-left:3px solid var(--lemon);
     color:#4b5563; font-style:italic; }
   .refrain { font-weight:700; font-size:1.15rem; color:var(--ink); margin:1.4em 0; }
