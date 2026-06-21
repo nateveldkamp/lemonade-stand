@@ -5,20 +5,23 @@ metadata:
   type: project
 ---
 
-**Agreed 2026-06-04.** Major pivot in how learners get started.
+**Agreed 2026-06-04, story-first landing 2026-06-12.** Major pivot in how learners get started, then the landing rebuilt as a story that doubles as the first lesson.
 
-## STATUS / how to resume (last worked 2026-06-04)
+## STATUS / how to resume (last worked 2026-06-12)
 
-The onboarding front door is **built and pushed to `origin/main`** (latest commit ~`a3350b6`). What exists and works:
-- Front door = root `README.md` (dual-audience) + a **GitHub Pages site** at repo root: `index.html` (landing), `about.html` (the why / lemonade-stand / play-the-whole-game story), `start.txt` (canonical AI guide), `llms.txt`, `.nojekyll`. Plus `game/play-by-chat.md` (Python-free game rules).
-- Landing primary URL: `https://nateveldkamp.github.io/lemonade-stand/`. Guide: `/start.txt`. About: `/about.html`.
+**2026-06-12, story-first landing (current).** `index.html` was rebuilt as a story that doubles as the first lesson, written in Nate's public voice (`~/.claude/voice.md`). It opens with the teaching philosophy as narrative (Josh Waitzkin clearing the chessboard to three pieces; David Perkins' "play the whole game" / t-ball / elementitis + abouttitis; why play works; the 1979 lemonade game's real history; the payoff that the game's three questions are the three chess pieces; then "the new piece on the board," an AI). It then hands the interactive part to the learner's own AI through two copy-paste prompts: (1) play one day of the stand, (2) the reveal (map each decision to a real skill, then show the skill map). The "one tap to start" provider buttons are removed; plain copy-paste only.
+
+`start.txt` stays the canonical AI guide (the full 7-beat flow + game rules). The page's launch prompt points the AI to it and tells the AI to skip the cold open and jump to playing a day, so the page and the guide don't repeat each other.
+
+**Note on an earlier same-day redesign that was superseded.** A parallel redesign (commit `f6cd8c1`) deleted `start.txt` and inlined the cold open, game rules, reveal table, and skill map directly into `index.html`, on the reasoning that most AI chats can't reliably fetch a hosted file. Nate chose the story-first version instead and restored `start.txt`; the fetch-reliability concern is handled by the prompts' "if you can't open the link, tell me and I'll paste it in" fallback. `README.md` and `llms.txt` from that redesign were kept (they just point at the page).
 
 **PENDING (do these to resume / test):**
 1. **Enable GitHub Pages** (one-time, only Nate can): repo Settings → Pages → Deploy from a branch → `main` / root → Save. Until then the github.io URLs 404.
-2. **Test pass:** open the landing on a phone, try each provider button (Claude, ChatGPT, Gemini, Grok) — see which open the app / fetch `start.txt` / start guiding vs. just summarize. Report back per provider; adjust prompt/fallbacks as needed.
-3. **Known caveat:** content is duplicated across README, `start.txt`, and the inline starter prompt — `start.txt` is canonical; consolidate later.
+2. **Test pass:** open `index.html` on a phone and a computer, read it top to bottom, copy both prompts into an AI chat, and confirm the AI plays a day and delivers the reveal + map via `start.txt`.
+3. **Trim `start.txt` beat 1** so the AI doesn't re-run the cold open / why now that the page delivers that.
+4. **Em dashes** still live in `README.md` and `llms.txt` (from the `f6cd8c1` redesign); they're tracked in `em-dash-cleanup-todo.md`.
 
-This onboarding thread is separate from the **curriculum skill rebuild** (see `skill-map-current-state-and-resume.md` — skills are still empty, being rebuilt level by level, L0 proposal pending).
+This onboarding thread is separate from the **curriculum skill rebuild** (see `skill-map-current-state-and-resume.md`, where skills are still empty, being rebuilt level by level, L0 proposal pending).
 
 ## The model: the repo link IS the onboarding
 
@@ -43,31 +46,26 @@ No more zipped folder + getting-started PDF. The new front door: a learner paste
 7. **Later milestone** — after Git basics: graduate to working out of the repo (clone it, use Claude Code / Codex / Cursor — learner's choice). This is when the copy-pasting ends. The chat→local graduation.
 
 ## Build artifacts
-- Rework root `README.md` into the dual-audience front door (human intro + AI-guide instructions encoding the flow; compact game loop inline for self-sufficiency).
-- `game/play-by-chat.md` — Python-free game ruleset for any AI to run.
-- Move/trim contributor content (currently in README) to a short pointer.
-- Later: `llms.txt` for discoverability; update prelude + docs to match.
+- `index.html`: story-first interactive landing (the philosophy narrative, then two copy-paste prompts that hand play + reveal to the learner's AI via `start.txt`). **Done 2026-06-12.**
+- `start.txt`: canonical AI guide (7-beat flow + game rules). Restored after the `f6cd8c1` redesign deleted it.
+- `about.html`: the "fuller story" page. **Done.**
+- `game/play-by-chat.md`: Python-free game ruleset; canonical source the game rules are distilled from. **Done.**
+- `llms.txt`: AI-discovery pointer to the page. **Done.**
+- Root `README.md`: points learners at the page, with a short fallback note for AI assistants with repo access. **Done.**
 
-## Delivery architecture (decided 2026-06-04)
+## Delivery architecture (current, since 2026-06-12)
 
-The hard problem isn't kickoff, it's *ongoing* content access: most AI tools can't reliably fetch raw GitHub files, and cached/search results go stale. Resolution — a **staged, browser/mobile-first** model:
+**Current model: the page tells the story, the AI runs the play.**
+- `index.html` (GitHub Pages root, `.nojekyll`) is a story-first landing that doubles as lesson one. It carries the teaching-philosophy narrative and the game's history as readable content, then hands the interactive beats to the learner's own AI.
+- Two copy-paste prompts do the handoff: (1) play one day of the stand, (2) the reveal (map the decisions to skills, then show the skill map). Both point the AI to `start.txt` for the beat-by-beat flow and the game rules, with a "paste it in if you can't open the link" fallback for AIs that can't fetch a URL. Provider buttons were removed; plain copy-paste only.
+- `start.txt` is the canonical AI guide and stays the single source for the flow + rules (`game/play-by-chat.md` is the Python-free rules it aligns with).
+- `about.html` is the "fuller story" page (business + AI as one skill, why a lemonade stand, "play the whole game," David Perkins), linked from `index.html`.
+- `llms.txt` and `README.md` point learners and AI assistants at the page.
+- Later (deferred): clone the repo into an agentic tool (Claude Code, Codex, etc.) for full reliable repo access, the "graduate to a repo" milestone.
 
-- **Phase 1 (long-lived, any AI, browser + mobile):** learner pastes a *tiny* prompt that points to a **GitHub Pages site** (`nateveldkamp.github.io/lemonade-stand`). Pages is a normal indexable website, so browsing/search-capable tools (incl. the Claude/ChatGPT/Gemini mobile apps) reach it far more reliably than raw-file links. Depth lives on the page; copy-paste stays minimal. **Keep learners in the browser/mobile app as long as possible.**
-- **Phase 2 (much later, on a computer):** clone the repo into an agentic tool (Claude Code, Codex, etc.) for full reliable repo access. Deferred.
-- **Honest caveat:** a tool with web access fully off still can't reach any URL; the tiny prompt then tells the AI to ask the learner to paste the page (one tap from the site). Degrade gracefully.
+Landing headline still makes explicit it's one course in two things at once: building/running a business AND working with AI, learned together.
 
-**Site files added at repo root (GitHub Pages source = root, `.nojekyll`):**
-- `index.html` — mobile-friendly landing: "Copy starter prompt" + one-tap "Open in" buttons in order **Claude, ChatGPT, Gemini, Grok (xAI)** (Claude/ChatGPT prefill via `?q=`; Gemini/Grok just open the app and the learner pastes). Deep-link prompt is short and points to start.txt.
-- `start.txt` — canonical full AI-guide instructions (beats + game rules + skill map) the prompt points the AI to fetch and follow.
-- `about.html` — the "fuller story" page: business + AI taught as one skill; **why a lemonade stand** (simplest complete business, scales card-table → global); **"play the whole game"** (David Perkins, *Making Learning Whole* — junior version of the whole game from day one); and the why-this-matters (repo/factory) argument. The landing page summarizes the why briefly and links here; the AI's opening links here too (`/about.html`, replacing the old `#why`).
-- `llms.txt` — AI-discovery pointer.
-- `.nojekyll` — serve files as-is.
-
-Landing headline now makes explicit it's **one course in two things at once — building/running a business AND working with AI, learned together.**
-
-**To enable:** repo Settings → Pages → Deploy from a branch → `main` / root. URLs: site `https://nateveldkamp.github.io/lemonade-stand/`, guide `.../start.txt`.
-
-**Duplication note:** the guide content now lives in 3 places (README AI section, `start.txt`, and the inline starter prompt). Consolidate later — `start.txt` is canonical.
+**To enable:** repo Settings → Pages → Deploy from a branch → `main` / root. URL: `https://nateveldkamp.github.io/lemonade-stand/`.
 
 ## Naming / narrative TODOs (from this discussion)
 - Use **"accounting"** not "bookkeeping" everywhere (Finance & accounting slice).
