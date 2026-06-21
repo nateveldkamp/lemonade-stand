@@ -3,143 +3,175 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lemonade Stand — start the course in any AI chat</title>
-<meta name="description" content="A hands-on course in the real skills of running a business, learned by growing a lemonade stand — in any AI chat, on your phone or computer.">
+<title>Lemonade Stand: clear the board, play the whole game</title>
+<meta name="description" content="A short story that's also your first lesson: clear the board, start with three pieces, and play the whole game of business (with an AI as your partner) by growing a lemonade stand.">
 <style>
   :root { --ink:#1f2937; --muted:#6b7280; --lemon:#f6c700; --lemon-d:#caa100; --bg:#fffdf5; --card:#ffffff; --line:#eee3b8; }
-  * { box-sizing: border-box; }
+  * { box-sizing:border-box; }
   html, body { margin:0; background:var(--bg); color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.55; }
-  .wrap { max-width:620px; margin:0 auto; padding:28px 20px 60px; }
-  h1 { font-size:2rem; margin:.2em 0 .1em; }
-  .tag { color:var(--muted); font-size:1.05rem; margin:0 0 1.4em; }
-  .lead { font-size:1rem; margin:0 0 1.4em; }
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.65; }
+  .wrap { max-width:640px; margin:0 auto; padding:28px 20px 64px; }
+  h1 { font-size:2rem; margin:.2em 0 .35em; }
+  h2 { font-size:1.3rem; margin:1.7em 0 .4em; }
+  p { margin:0 0 1.1em; }
+  .lead { font-size:1.12rem; color:#374151; }
+  .questions { margin:0 0 1.1em; padding:14px 18px; background:#fffef9; border:1px solid var(--line);
+    border-radius:12px; }
+  .questions li { margin:.2em 0; }
+  blockquote { margin:1.2em 0; padding:.3em 0 .3em 16px; border-left:3px solid var(--lemon);
+    color:#4b5563; font-style:italic; }
+  .refrain { font-weight:700; font-size:1.15rem; color:var(--ink); margin:1.4em 0; }
   .card { background:var(--card); border:1px solid var(--line); border-radius:14px;
     padding:18px; margin:0 0 22px; }
+  .card h2 { margin-top:0; }
   .step { font-weight:700; font-size:.8rem; letter-spacing:.06em; text-transform:uppercase;
     color:var(--lemon-d); margin:0 0 8px; }
-  textarea { width:100%; min-height:120px; border:1px solid var(--line); border-radius:10px;
+  textarea { width:100%; min-height:96px; border:1px solid var(--line); border-radius:10px;
     padding:12px; font-size:.9rem; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
     color:var(--ink); background:#fffef9; resize:vertical; }
   .btn { display:inline-block; border:none; border-radius:10px; padding:12px 16px;
     font-size:1rem; font-weight:700; cursor:pointer; text-decoration:none; text-align:center; }
   .btn-primary { background:var(--lemon); color:#3a2f00; width:100%; margin-top:10px; }
   .btn-primary:active { background:var(--lemon-d); }
-  .providers { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
-  .btn-prov { background:#fff; color:var(--ink); border:1.5px solid var(--line); }
-  .btn-prov:active { background:#fdf8e3; }
   .hint { color:var(--muted); font-size:.85rem; margin:10px 0 0; }
-  .foot { color:var(--muted); font-size:.85rem; margin-top:30px; }
+  .copied { color:#15803d; font-weight:700; font-size:.85rem; visibility:hidden; margin-left:8px; }
+  .foot { color:var(--muted); font-size:.85rem; margin-top:34px; }
   a { color:var(--lemon-d); }
-  #copied { color:#15803d; font-weight:700; font-size:.85rem; visibility:hidden; margin-left:8px; }
-  #toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
-    background:#1f2937; color:#fff; padding:11px 16px; border-radius:10px;
-    font-size:.9rem; opacity:0; transition:opacity .2s; pointer-events:none; z-index:50;
-    max-width:90vw; text-align:center; }
-  #toast.show { opacity:.96; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>🍋 Lemonade Stand</h1>
-  <p class="tag">Learn to build and run a business — and to work with AI — as one skill, by growing a lemonade stand.</p>
 
-  <p class="lead">This is one course in two things at once: how to <strong>build and run a business</strong>, and how to do that work <strong>hand-in-hand with AI</strong>. You learn them <em>together</em>, because that's how the work actually happens now — all by growing a lemonade stand from a card table into a company, in any AI chat.</p>
+  <p class="lead">When Josh Waitzkin teaches someone chess, the first thing he does is take most of the pieces off the board.</p>
 
-  <p class="lead">No download, no setup. Open your AI app (phone or computer), and either tap a button below or paste the starter prompt. Your assistant becomes your guide.</p>
+  <p>Waitzkin was a chess prodigy, the kid the movie <em>Searching for Bobby Fischer</em> is about. He doesn't start beginners with openings and rulebooks and memorized lines. He clears the board down to a king and a pawn against a lone king. Three pieces. On that nearly empty board, a beginner can actually feel how the pieces move and what they want, instead of drowning in the other thirty. Then he adds pieces back a few at a time, until the whole board is there and the student understands it from the inside rather than from a manual.</p>
 
-  <p class="lead" style="font-size:.92rem;color:var(--muted)">To start, you'll guide your AI by pasting in prompts — that's all you need today. A little later in the course you'll set up a shared folder (a "repo") your AI can work out of directly, and the copying and pasting stops. We'll walk you through it; no experience needed.</p>
+  <h2>Playing the whole game</h2>
+
+  <p>David Perkins, an education researcher at Harvard, has a name for what Waitzkin is doing. In his book <em>Making Learning Whole</em>, he calls it <strong>playing the whole game</strong>.</p>
+
+  <p>Think about how baseball gets taught next to how math gets taught. Nobody hands a seven-year-old a rulebook and says come back in a few years. They set up t-ball, a junior version of the whole game, and the kid plays on day one: hitting, running the bases, the actual thing, just smaller. The finer points get added later, once the kid already cares about the game.</p>
+
+  <p>Math, and most of what happens in a classroom, runs the opposite way. Years of drills and definitions first, the actual game (using any of it for something real) maybe never. Perkins has two words for how this goes wrong. <em>Elementitis</em>: learning the elements of something without the story of how they fit together. <em>Abouttitis</em>: learning <em>about</em> a thing without ever doing it.</p>
+
+  <p>His fix is the t-ball fix. Invent a junior version of the real game, simple but still recognizably the whole thing, and play it from the very first day.</p>
+
+  <h2>Why play does the heavy lifting</h2>
+
+  <p>Part of why t-ball works is that it's play, which is the oldest learning technology there is. A whole generation picked up more about running a business from <em>RollerCoaster Tycoon</em> than from any class. <em>Zoo Tycoon</em>, <em>Mall Tycoon</em>, <em>SimCity</em>, the entire shelf of them quietly taught pricing, cash flow, supply and demand, and the long climb from a small operation to a complicated one. No one lectured those kids on unit economics. They were just trying to keep the lines short and the park out of the red, and the lessons came in through the side door, because the whole thing was a game.</p>
+
+  <p>Play lets a person run the entire game cheaply, lose, shrug, and run it again. That loop is where intuition actually comes from.</p>
+
+  <h2>The simplest whole business</h2>
+
+  <p>So here's the question this whole project started from. To teach someone the real game of business, not the elements of it, not a class about it, but the actual game, what's the t-ball version?</p>
+
+  <p>It would be the simplest thing that's still unmistakably a whole business. Small enough to grasp in an afternoon, complete enough that it's really the entire job: make something, get people to buy it, don't run out, and check whether any money was left at the end. There's an obvious answer, and it happens to be a card table on a sidewalk.</p>
+
+  <h2>Three questions</h2>
+
+  <p>The lemonade stand isn't just the American kid's first business by tradition. It was also one of the first business simulations ever put on a computer.</p>
+
+  <p>In 1973, a man named Bob Jamison at the Minnesota Educational Computing Consortium wrote a game called <em>Lemonade Stand</em> for the room-sized timeshare machines that schools dialed into. Six years later, in February 1979, an Apple engineer named Charlie Kellner ported it to the Apple II, gave it color and a little soundtrack (when a thunderstorm wiped out the day's sales, the computer played a few bars of "Singin' in the Rain"), and Apple started bundling it with the machine. So for a lot of families, the very first program that ever ran on their very first computer was a tiny business.</p>
+
+  <p>Every morning the game shows the weather and then asks three questions:</p>
+
+  <ul class="questions">
+    <li>How many glasses of lemonade to make?</li>
+    <li>How many signs to put up?</li>
+    <li>What price to charge?</li>
+  </ul>
+
+  <p>That's the whole game. Three numbers a day.</p>
+
+  <p>And here's the part worth slowing down for. Those three questions are the three chess pieces.</p>
+
+  <p>Nearly every decision a business ever makes, all the way up to a global company with factories and a stock ticker, is a more elaborate version of one of those three. How many glasses to make is the question of matching supply to demand, and how much money to put at risk to do it. How many signs is the question of how to create demand. What price is the question of how to capture the value once it's been created. Take any giant company, clear the board down to almost nothing, and what's left is a card table, a pitcher, and three questions.</p>
+
+  <p class="refrain">That's the junior version. You can play the whole game of business on it, then add the pieces back.</p>
+
+  <h2>The new piece on the board</h2>
+
+  <p>There's one piece on the board today that Bob Jamison and Charlie Kellner never had: an AI sitting right next to you.</p>
+
+  <p>That changes things enough that it's worth learning the two together instead of apart. Most training treats AI as a side subject, a tool to bolt on after the real work is already understood. But the work doesn't happen that way anymore. The business thinking and the AI are one motion now: decide what to do, and do it with an AI in the loop. So this course teaches them as a single skill, by growing a lemonade stand from that card table into a company, with an AI as the partner the whole way up.</p>
+
+  <p>And it teaches them the way anything worth learning gets learned. By playing. Starting right now.</p>
 
   <div class="card">
-    <div class="step">1 · One tap to start</div>
-    <div class="providers">
-      <a class="btn btn-prov" id="open-claude" target="_blank" rel="noopener">Open in Claude</a>
-      <a class="btn btn-prov" id="open-chatgpt" target="_blank" rel="noopener">Open in ChatGPT</a>
-      <a class="btn btn-prov" id="open-gemini" target="_blank" rel="noopener">Open in Gemini</a>
-      <a class="btn btn-prov" id="open-xai" target="_blank" rel="noopener">Open in Grok</a>
-    </div>
-    <p class="hint">On a computer, Claude and ChatGPT open with the prompt already typed in. On a phone — and for Gemini and Grok — we copy the prompt for you, then open the app; just paste it in.</p>
+    <h2>Your first day at the stand</h2>
+    <p style="margin-bottom:14px">Open your AI app of choice, on your phone or your computer. Copy the prompt below, paste it into the chat, and you're playing.</p>
+    <div class="step">Copy &amp; paste this</div>
+    <textarea id="launch-prompt" readonly></textarea>
+    <button class="btn btn-primary" id="copy-launch">Copy the prompt <span class="copied" id="copied-launch">copied ✓</span></button>
   </div>
+
+  <p>Play it. Watch the weather, pick your three numbers, find out if you made money. It takes about a minute, and you can run another day right after.</p>
 
   <div class="card">
-    <div class="step">2 · Or copy &amp; paste this</div>
-    <textarea id="prompt" readonly></textarea>
-    <button class="btn btn-primary" id="copy">Copy starter prompt <span id="copied">copied ✓</span></button>
-    <p class="hint">Works in any AI chat. If your assistant can't open links, it'll ask you to paste the page — tap <a href="start.txt" target="_blank" rel="noopener">the guide</a> and copy it in.</p>
+    <div class="step">When you've played a day, paste this</div>
+    <textarea id="reveal-prompt" readonly></textarea>
+    <button class="btn btn-primary" id="copy-reveal">Copy the prompt <span class="copied" id="copied-reveal">copied ✓</span></button>
+    <p class="hint">Your AI will show you what each of those three numbers really was, and then the whole map of skills this course covers.</p>
   </div>
 
-  <section class="card" id="why">
-    <h2 style="margin:.1em 0 .5em;font-size:1.3rem">Why this exists</h2>
-    <p>AI has transformed software engineering faster than any other kind of work — because that work already lives in an organized, version-tracked "repo" an AI can fully use. Most knowledge work's context is scattered across inboxes, decks, and spreadsheets; closing that gap is the opportunity, and the skills that close it are what you'll learn here.</p>
-    <p>Why a lemonade stand? Why learn business and AI together? And what does it mean to "play the whole game"?</p>
-    <p><a href="about.html">Read the fuller story →</a></p>
-  </section>
+  <h2>Where this goes</h2>
+
+  <p>That little game is the whole course in miniature. You just ran a real business for a day, with an AI, and every number you picked was a door into a real skill: pricing, marketing, operations, finance, reading risk. The stand grows from here one piece at a time, and what you can do with it grows the same way.</p>
+
+  <p>Here's why it's worth the climb. AI reshaped software engineering faster than any other kind of work, not because coders are special, but because their work already lives in one organized, version-tracked place an AI can fully see and work inside. Most knowledge work isn't there yet. The context is scattered across inboxes, slide decks, and spreadsheets. Closing that gap is the opportunity, and the skills that close it are exactly what you'll build here. (<a href="about.html">the fuller story is here</a>.)</p>
+
+  <p>For now you'll guide your AI by pasting in prompts, which is all today asks of you. Later, once a little about repos and a tool called Git is under your belt, you'll set up one shared folder your AI works out of directly, and the copying and pasting stops. No experience needed; the course walks you through every step.</p>
+
+  <p class="refrain">Clear the board. Start with three pieces. Play the whole game.</p>
 
   <p class="foot">
-    Built in the open. The full project, skill map, and the classic 1979 game live at
+    Built in the open. The full project, the skill map, and a faithful recreation of the 1979 game all live at
     <a href="https://github.com/nateveldkamp/lemonade-stand" target="_blank" rel="noopener">github.com/nateveldkamp/lemonade-stand</a>.
   </p>
 </div>
-<div id="toast"></div>
 
 <script>
   var GUIDE = "https://nateveldkamp.github.io/lemonade-stand/start.txt";
-  var PROMPT =
-    "You are my guide for an interactive course called Lemonade Stand. " +
-    "Please open this page and follow it to guide me, beginning immediately " +
-    "(act as my guide — don't just summarize): " + GUIDE + " " +
-    "If you can't open links, tell me and I'll paste it here. Let's begin.";
 
-  document.getElementById("prompt").value = PROMPT;
+  // The page has already told the story and the "why," so this prompt tells the
+  // AI to skip the cold open and jump straight to playing a day of the stand.
+  var LAUNCH_PROMPT =
+    "You're my guide for an interactive course called Lemonade Stand. I just read " +
+    "the intro, so skip the welcome and the background and start by playing one day " +
+    "of the stand with me right now. Open this guide and follow it (act as my guide, " +
+    "don't just summarize), beginning at the 'play one day of the stand' step: " + GUIDE + " " +
+    "If you can't open the link, tell me and I'll paste it in. Let's play.";
 
-  var enc = encodeURIComponent(PROMPT);
-  var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
-                 (navigator.maxTouchPoints > 1 && /Macintosh/.test(navigator.userAgent));
+  var REVEAL_PROMPT =
+    "Now show me the trick behind what I just did. Map each decision I made (the price, " +
+    "the number of signs, how many glasses to make, how I reacted to the weather, and " +
+    "whether I turned a profit) to the real business skill behind it. Then show me the " +
+    "full map of skills this course covers. Keep it brief.";
 
-  // Desktop: Claude and ChatGPT pre-fill the prompt via ?q=. Mobile: the native
-  // apps usually ignore ?q=, and a plain provider link opens the app via universal
-  // links — so on mobile we open the app's base URL and copy the prompt to the
-  // clipboard, so the learner just pastes. Gemini and Grok never pre-fill.
-  var urls = {
-    claude:  isMobile ? "https://claude.ai/new" : "https://claude.ai/new?q=" + enc,
-    chatgpt: isMobile ? "https://chatgpt.com/"  : "https://chatgpt.com/?q=" + enc,
-    gemini:  "https://gemini.google.com/app",
-    xai:     "https://grok.com"
-  };
-  // Which buttons open with the prompt already filled in (so no copy needed).
-  var prefilled = { claude: !isMobile, chatgpt: !isMobile, gemini: false, xai: false };
+  document.getElementById("launch-prompt").value = LAUNCH_PROMPT;
+  document.getElementById("reveal-prompt").value = REVEAL_PROMPT;
 
-  function copySync() {
-    var ta = document.getElementById("prompt");
+  function copyFrom(id) {
+    var ta = document.getElementById(id);
     ta.select(); ta.setSelectionRange(0, 99999);
-    try { document.execCommand("copy"); } catch (e) {}                 // synchronous, runs before navigation
+    try { document.execCommand("copy"); } catch (e) {}
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try { navigator.clipboard.writeText(ta.value); } catch (e) {}
     }
   }
-  function toast(msg) {
-    var t = document.getElementById("toast");
-    t.textContent = msg; t.classList.add("show");
-    setTimeout(function () { t.classList.remove("show"); }, 2200);
-  }
-
-  Object.keys(urls).forEach(function (id) {
-    var el = document.getElementById("open-" + id);
-    el.href = urls[id];
-    el.addEventListener("click", function (e) {
-      if (prefilled[id]) return;            // desktop Claude/ChatGPT: let the pre-filled link open
-      e.preventDefault();
-      copySync();                            // put the prompt on the clipboard first
-      toast("Prompt copied — paste it into the app");
-      window.open(urls[id], "_blank", "noopener");  // new tab — keep this page open
-    });
-  });
-
-  document.getElementById("copy").addEventListener("click", function () {
-    copySync();
-    var c = document.getElementById("copied");
+  function flashCopied(id) {
+    var c = document.getElementById(id);
     c.style.visibility = "visible";
     setTimeout(function () { c.style.visibility = "hidden"; }, 1600);
+  }
+
+  document.getElementById("copy-launch").addEventListener("click", function () {
+    copyFrom("launch-prompt"); flashCopied("copied-launch");
+  });
+  document.getElementById("copy-reveal").addEventListener("click", function () {
+    copyFrom("reveal-prompt"); flashCopied("copied-reveal");
   });
 </script>
 </body>
