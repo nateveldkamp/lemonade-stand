@@ -138,22 +138,58 @@
 </div>
 
 <script>
-  var GUIDE = "https://nateveldkamp.github.io/lemonade-stand/start.txt";
-
-  // The page has already told the story and the "why," so this prompt tells the
-  // AI to skip the cold open and jump straight to playing a day of the stand.
+  // The page has already told the story and the "why," so these prompts carry
+  // everything the AI needs inline. No link to fetch: many AI chats can't
+  // open URLs. start.txt stays the canonical long-form guide.
   var LAUNCH_PROMPT =
     "You're my guide for an interactive course called Lemonade Stand. I just read " +
-    "the intro, so skip the welcome and the background and start by playing one day " +
-    "of the stand with me right now. Open this guide and follow it (act as my guide, " +
-    "don't just summarize), beginning at the 'play one day of the stand' step: " + GUIDE + " " +
-    "If you can't open the link, tell me and I'll paste it in. Let's play.";
+    "the intro, so skip any welcome or backstory and run one day of the 1979 " +
+    "Lemonade Stand game with me right now. Be warm and brief, one step at a " +
+    "time, and wait for me after each step.\n\n" +
+    "Rules: I start with $2.00. Each day, first show a cheerful Lemonsville " +
+    "weather report. Roll the weather: 60% sunny, 20% cloudy (pick a chance of " +
+    "rain from 30-70%), 20% hot (a heat wave; on days 1-2 treat hot as sunny). " +
+    "Secretly, 25% of cloudy days become a thunderstorm, and on 25% of sunny " +
+    "days a street crew blocks normal traffic, then a coin flip decides whether " +
+    "they're thirsty and buy every glass I made or traffic collapses to a tenth " +
+    "of normal. Don't reveal a storm or the crew until the results.\n\n" +
+    "Then ask my three decisions: how many glasses to make, how many ad signs " +
+    "(15 cents each), and the price per glass in cents. Making a glass costs 2 " +
+    "cents on days 1-2, 4 cents on days 3-6, 5 cents from day 7 on. Re-ask if I " +
+    "can't afford my choices.\n\n" +
+    "Then compute and report a daily financial report: base sales = " +
+    "3000/(price*price) if price is 10 or more, otherwise (10-price)*2.4+30. " +
+    "Weather factor: sunny 1.0, hot 2.0, cloudy 1 minus the rain chance. Ad " +
+    "boost: 1 - e^(-0.5*signs). Glasses sold = floor(base * weather factor * " +
+    "(1 + ad boost)), capped at glasses made. Thunderstorm: zero sold. Thirsty " +
+    "crew: all sold. Income = sold * price / 100 dollars. Expenses = glasses " +
+    "made * cost + " +
+    "signs * 15 cents. Report glasses sold, income, expenses, profit, and my " +
+    "new assets. If my assets drop below the cost of one glass, I'm bankrupt.\n\n" +
+    "Start now: show me day 1's weather and ask for my three decisions.";
 
   var REVEAL_PROMPT =
-    "Now show me the trick behind what I just did. Map each decision I made (the price, " +
-    "the number of signs, how many glasses to make, how I reacted to the weather, and " +
-    "whether I turned a profit) to the real business skill behind it. Then show me the " +
-    "full map of skills this course covers. Keep it brief.";
+    "Now show me the trick behind the day I just played. Map each decision I " +
+    "made to the real business skill behind it: the price per glass is pricing " +
+    "(marketing); the signs are marketing; how many glasses to make is " +
+    "inventory (operations) plus unit economics (finance); reacting to weather " +
+    "and storms is decision-making and risk; whether I turned a profit is " +
+    "accounting (finance).\n\n" +
+    "Then show me the course's skill map: a wheel with the lemonade stand at " +
+    "the center and skills sitting further out as the business grows bigger. It " +
+    "has 16 areas in four groups. Craft (how you work): communication; " +
+    "knowledge and context management; planning and execution; decision-making " +
+    "and judgment. Build (make things): data and analytics; software and " +
+    "engineering; automation and IT systems; product and design. Run (business " +
+    "functions): finance and accounting; operations and supply chain; " +
+    "marketing; sales and business development; customer success. Lead (scale " +
+    "and steer): people and leadership; strategy and corporate development; " +
+    "legal, risk and governance.\n\n" +
+    "Then ask me two questions: what do I already do well (that's where I am on " +
+    "the map) and what do I want to get better at (that's my destination). Use " +
+    "my answers to place me on the map and suggest a sensible first step. The " +
+    "course lessons are still being written, so frame the step as a direction, " +
+    "not a link. Keep all of this brief.";
 
   document.getElementById("launch-prompt").value = LAUNCH_PROMPT;
   document.getElementById("reveal-prompt").value = REVEAL_PROMPT;

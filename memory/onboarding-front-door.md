@@ -7,9 +7,11 @@ metadata:
 
 **Agreed 2026-06-04, story-first landing 2026-06-12.** Major pivot in how learners get started, then the landing rebuilt as a story that doubles as the first lesson.
 
-## STATUS / how to resume (last worked 2026-06-12)
+## STATUS / how to resume (last worked 2026-07-17)
 
-**2026-06-12, story-first landing (current).** `index.html` was rebuilt as a story that doubles as the first lesson, written in Nate's public voice (`~/.claude/voice.md`). It opens with the teaching philosophy as narrative (Josh Waitzkin clearing the chessboard to three pieces; David Perkins' "play the whole game" / t-ball / elementitis + abouttitis; why play works; the 1979 lemonade game's real history; the payoff that the game's three questions are the three chess pieces; then "the new piece on the board," an AI). It then hands the interactive part to the learner's own AI through two copy-paste prompts: (1) play one day of the stand, (2) the reveal (map each decision to a real skill, then show the skill map). The "one tap to start" provider buttons are removed; plain copy-paste only.
+**2026-07-17, self-contained prompts.** The two copy-paste prompts in `index.html` no longer point the AI at the `start.txt` URL; many AI chats can't fetch links, so the "paste it in if you can't open it" fallback was too fragile. The launch prompt now carries a distilled version of the game rules inline, and the reveal prompt carries the decision-to-skill mapping plus the full 16-area skill map inline. `start.txt` stays the canonical long-form guide for the README / llms.txt entry paths (an AI given the repo link still uses it); keep it in sync with the inline prompts if the rules or the map change.
+
+**2026-06-12, story-first landing.** `index.html` was rebuilt as a story that doubles as the first lesson, written in Nate's public voice (`~/.claude/voice.md`). It opens with the teaching philosophy as narrative (Josh Waitzkin clearing the chessboard to three pieces; David Perkins' "play the whole game" / t-ball / elementitis + abouttitis; why play works; the 1979 lemonade game's real history; the payoff that the game's three questions are the three chess pieces; then "the new piece on the board," an AI). It then hands the interactive part to the learner's own AI through two copy-paste prompts: (1) play one day of the stand, (2) the reveal (map each decision to a real skill, then show the skill map). The "one tap to start" provider buttons are removed; plain copy-paste only.
 
 `start.txt` stays the canonical AI guide (the full 7-beat flow + game rules). The page's launch prompt points the AI to it and tells the AI to skip the cold open and jump to playing a day, so the page and the guide don't repeat each other.
 
@@ -57,7 +59,7 @@ No more zipped folder + getting-started PDF. The new front door: a learner paste
 
 **Current model: the page tells the story, the AI runs the play.**
 - `index.html` (GitHub Pages root, `.nojekyll`) is a story-first landing that doubles as lesson one. It carries the teaching-philosophy narrative and the game's history as readable content, then hands the interactive beats to the learner's own AI.
-- Two copy-paste prompts do the handoff: (1) play one day of the stand, (2) the reveal (map the decisions to skills, then show the skill map). Both point the AI to `start.txt` for the beat-by-beat flow and the game rules, with a "paste it in if you can't open the link" fallback for AIs that can't fetch a URL. Provider buttons were removed; plain copy-paste only.
+- Two copy-paste prompts do the handoff: (1) play one day of the stand, (2) the reveal (map the decisions to skills, then show the skill map). Since 2026-07-17 both prompts are self-contained: the game rules and the skill map are distilled inline, so no link needs to be fetched. Provider buttons were removed; plain copy-paste only.
 - `start.txt` is the canonical AI guide and stays the single source for the flow + rules (`game/play-by-chat.md` is the Python-free rules it aligns with).
 - `about.html` is the "fuller story" page (business + AI as one skill, why a lemonade stand, "play the whole game," David Perkins), linked from `index.html`.
 - `llms.txt` and `README.md` point learners and AI assistants at the page.
